@@ -39,6 +39,7 @@ def low_variance_filter(data_set, threshold):
 
 def random_forest(data_set, y_values, want_graph, random_state, max_depth):
     model = RandomForestRegressor(random_state=random_state, max_depth=max_depth)
+    #ovde radi one hot encoding
     data_set = pd.get_dummies(data_set)
     model.fit(data_set, y_values)
 
@@ -60,7 +61,7 @@ def random_forest(data_set, y_values, want_graph, random_state, max_depth):
 
 def principal_component_analysis_pca(data_set, number_of_components):
     pca = PCA(n_components=number_of_components)
-    pca_result = pca.transform(data_set.values)
+    pca_result = pca.fit_transform(data_set.values)
 
     return pca_result
 

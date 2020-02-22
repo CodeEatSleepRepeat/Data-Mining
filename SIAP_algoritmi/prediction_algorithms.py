@@ -10,7 +10,9 @@ import xgboost as xgb
 from lifelines import CoxPHFitter
 from sklearn.linear_model import ElasticNet, ElasticNetCV
 import sklearn.metrics
-#import autosklearn.regression
+
+
+# import autosklearn.regression
 
 
 # PLS
@@ -78,6 +80,7 @@ def partial_least_squares(X, y, n_comp, plot_components=True):
     return
 
 
+# zahteva numericke vrednosti
 def XGBoost_regression(data_set, y_values):
     xg_reg = xgb.XGBRegressor(objective='reg:linear', colsample_bytree=0.3, learning_rate=0.1,
                               max_depth=5, alpha=10, n_estimators=10)
@@ -86,17 +89,18 @@ def XGBoost_regression(data_set, y_values):
     return xg_reg
 
 
-def cox_regression(data_set):
+def cox_regression(data_set, duration_collumn, y_collumn_name):
     cph = CoxPHFitter()
-    cph.fit(data_set, 'tenure', event_col='Churn')
+    cph.fit(data_set, duration_collumn, event_col=y_collumn_name)
 
     return cph
 
 
-def elastic_regression(data_set, y_value, alpha):
+def elastic_regression(data_set, y_value, alpha=0.01):
     elastic = ElasticNet(alpha=alpha).fit(data_set, y_value)
 
     return elastic
+
 
 '''
 Za svaki feature moramo navesti kojeg je on tipa npr:
