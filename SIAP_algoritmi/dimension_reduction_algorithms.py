@@ -103,8 +103,7 @@ def forward_feature_selection(data_set, y_values, f_value):
 
 def autoencoder_dimension_reduction(data_set, number_of_features):
     encoding_dim = number_of_features
-
-    input_df = Input(shape=(171,))
+    input_df = Input(shape=(data_set.shape[1],))
     encoded = Dense(encoding_dim, activation='relu')(input_df)
     encoder = Model(input_df, encoded)
     encoded_data_set = encoder.predict(data_set)
@@ -144,7 +143,7 @@ def idepedent_component_analysis_ica(data_set, number_of_components, want_graph)
 '''
 
 
-def uniform_manifold_approximation_and_projection(data_set, n_neighbors, min_dist, number_of_components, want_graph):
+def uniform_manifold_approximation_and_projection(data_set, number_of_components, want_graph, n_neighbors=5, min_dist=0.3):
     umap_data = umap.UMAP(n_neighbors=n_neighbors, min_dist=min_dist, n_components=number_of_components).fit_transform(
         data_set.values)
 
