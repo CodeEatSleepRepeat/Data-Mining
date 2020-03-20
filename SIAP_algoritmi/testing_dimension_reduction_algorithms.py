@@ -128,5 +128,18 @@ UNIFORM MANIFOLD APPROXIMATION AND PROJECTION
 
 ok i ovo izbacuje dataset sa izabranim brojem kolona, ali izbacuje i neke warninge pre toga u crvenoj boji...
 '''
-umap_data_set = dimension_reduction_algorithms.uniform_manifold_approximation_and_projection(pd.get_dummies(x_train_without_nan), 10, False)
-print(umap_data_set.shape)
+# umap_data_set = dimension_reduction_algorithms.uniform_manifold_approximation_and_projection(pd.get_dummies(x_train_without_nan), 10, False)
+# print(umap_data_set.shape)
+
+'''
+LASSO REGULARISATION 
+
+ima neku gresku
+'''
+# lasso_data_set = dimension_reduction_algorithms.lasso_regularisation_reduction_dimensionality(pd.get_dummies(x_train_without_nan), y_train_without_nan, False)
+# print(lasso_data_set.shape)
+
+'''
+SEQUENTIAL FEATURE SELECTION
+'''
+sequential_feat_selection_data_set = dimension_reduction_algorithms.sequential_feature_selection(pd.get_dummies(x_train_without_nan), y_train_without_nan, False)

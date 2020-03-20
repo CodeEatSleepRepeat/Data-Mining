@@ -12,10 +12,11 @@ def predict_data_set(x_train, x_test, y_train, y_test, data_set_name):
     print('PREDICTION RESULTS OF: ' + data_set_name)
 
     # popunjavamo NaN vrednosti sa srednjom vrednosti dataseta jer algoritam ne dozvoljava NaN vrednosti
-    x_train_without_nan = x_train.fillna(x_train.mean())
-    x_test_without_nan = x_test.fillna(x_test.mean())
-    y_train_without_nan = y_train.fillna(y_train.mean())
-    y_test_without_nan = y_test.fillna(y_test.mean())
+    # formula za Z_score => (y_test - y_test.mean())/y_test.std()
+    x_train_without_nan = x_train.fillna((x_train - x_train.mean())/x_train.std())
+    x_test_without_nan = x_test.fillna((x_test - x_test.mean())/x_test.std())
+    y_train_without_nan = y_train.fillna((y_train - y_train.mean())/y_train.std())
+    y_test_without_nan = y_test.fillna((y_test - y_test.mean())/y_test.std())
 
     # treniranje predikcionog modela
     x_Boost_regression = prediction_algorithms.XGBoost_regression(pd.get_dummies(x_train_without_nan),
