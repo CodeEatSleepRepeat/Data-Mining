@@ -16,7 +16,9 @@ def save_data_as_csv(data, path):
         writer = csv.writer(f)
         writer.writerows(data)
 
-
+'''
+    Funkcija koja ispisuje vrednosti validacionih algoritama na gresku
+'''
 def print_validation_scores(algorithm_prediction, true_value):
     # testiranje na gresku
     MSE = validation_methods.mean_squared_error_metrics(true_value, algorithm_prediction)
@@ -27,6 +29,46 @@ def print_validation_scores(algorithm_prediction, true_value):
     print("R2 ERROR: ")
     print(r2_error)
 
+'''
+    Funkcija koja kao parametre prima:
+        - URL putanju do dokumenta
+        - Informaciju o tipu dokumenta (csv ili exel)
+        - Nazive kolona koji ce se koristit za prediktore
+        - Naziv kolone koju treba prediktovati
+        
+    Funkcija vraca:
+        - Ucitani data frame (document)
+        - Kolone prediktora (x_data) i predikcione kolone (y_data)
+        - Enkodovane kolone prediktora (x_data_encoded)
+        - I splitovan data set u 4 skupa : x_test, x_train, y_test, y_train
+'''
+def get_important_data(doc_url_path, doc_type, x_data_column_names, y_data_column_name):
+    document = {}
+    if doc_type == "csv":
+        document = utils.read_csv(doc_url_path)
+    elif doc_type == "exel":
+        document = utils.read_exel(doc_url_path)
+
+    x_data = document[x_data_column_names]
+    y_data = document[y_data_column_name]
+
+    x_data_encoded = pd.get_dummies(x_data)
+
+    x_train, x_test, y_train, y_test = utils.train_test_split_data(x_data_encoded, y_data, 0.2)
+
+    return document, x_data, y_data, x_data_encoded, x_train, x_test, y_train, y_test
+
+
+'''
+    Funkcija koja za rezultat vraca istreniran regresioni model
+    
+    Na ulaz prima:
+        - Splitovan pocetni data set (x_train, x_test, y_train, y_test)
+        - Naziv koji zelimo da ispisemo u konzolnom ispisu za data set
+        - Naziv metoda sa kojim zelimo da upotpunimo nedostajuce vrednost (fill_with): mean, min, max, zero..
+        - Naziv algoritma koji zelimo da istreniramo (algorithm)
+
+'''
 
 def predict_data_set(x_train, x_test, y_train, y_test, data_set_name, fill_with, algorithm):
     print('############################################################################################')
@@ -75,8 +117,6 @@ def predict_data_set(x_train, x_test, y_train, y_test, data_set_name, fill_with,
         elastic_regression = prediction_algorithms.elastic_regression(x_train_without_nan,
                                                                       y_train_without_nan, 0.01)
         elastic_regression_prediction = elastic_regression.predict(x_test_without_nan)
-
-        print("DIMENZIJA OD MODELA JE: " + str(x_test_without_nan.shape))
         print_validation_scores(elastic_regression_prediction, y_test_without_nan)
 
         return elastic_regression
@@ -115,349 +155,294 @@ def fill_data_sets(prediction_model, x_value_encoded, x_value, y_value, name_of_
 
     print("Prosao, sad cuvanje")
     save_data_as_csv(new_data_set,
-                     "/home/sale/PycharmProjects/fillovane_tabele/" + name_of_data_set)
+                     destination_to_save_new_documents + name_of_data_set)
     print("sacuvano")
 
+
+'''
+    Funkcija koja vraca mapu drzava = lista_nedostajucih_godina. 
+    Ulaz u funkciju je sam data set i opseg godina koje zelimo da ispitamo
+'''
+
+
+def get_country_missing_years_map(data_set, year_from, year_to):
+    all_years = list(range(year_from, year_to + 1))
+    country_to_missing_years_map = {}
+
+    for row in data_set.values:
+
+        if row[0] in country_to_missing_years_map:
+            if row[1] in country_to_missing_years_map[row[0]]:
+                country_to_missing_years_map[row[0]].remove(row[1])
+        else:
+            country_to_missing_years_map[row[0]] = all_years
+
+    return country_to_missing_years_map
+
+
+'''
+    Funkcija koja za rezultat vraca data set koji pokriva sve neophodne godine gde ce na novododatim
+    godinama na y vrednosti stojati NaN
+    
+    Na ulazu dobija:
+        - data_set koji treba dopuniti za nedostajuce godine
+        - dictionary koji kao kljuc sadrzi ime drzave, a na vrednosti listu svih godina koje nisu
+            zabelezeni za tu drzavu, a neophodne su
+'''
+
+def fill_missing_years_for_countries_in_data_set_with_nan(data_set, country_to_missing_years_map):
+    data_set_values = []
+
+    for data in data_set.values:
+        data_set_values.append(data)
+
+    for country in country_to_missing_years_map:
+        list_of_missing_years = country_to_missing_years_map[country]
+        for missing_year in list_of_missing_years:
+            new_row = [country, missing_year, float('nan')]
+            data_set_values.append(new_row)
+
+
+
+    return data_set_values
+
+
+'''
+    Nacin na koji nadohnadjujemo nedostajuce godine i laziramo vrednosti:
+
+    1. Pronalazimo listu svih drzava koje se nalaze u data setu i uz svaku drzavu postavljena je lista
+        sa godinama koje nedostaju u datasetu (npr za nas rad je bitan raspon od 1990-2017)
+
+    2. Nakon sto smo napravili recnik sa tim vrednostima, pravimo novi data_set koji ce sadrzati i kolone
+        drzava sa nedostajucim godinama, sem sto ce na mestu "predvidjane vrednosti" stojati NaN vrednost
+
+    3. Pretvaramo data_set u Data_frame, delimo ga na X i Y podsetove i Xencoded podset
+
+    4. Prosledjujemo funkciji fill_data_sets sve podatke i ona puni NaN vrednosti sa predvidjenim vrednostima
+        i cuva u fajl.csv
+'''
+
+
+def fill_missing_year_data(document, prediction_model, x_data_column_names, y_data_column_name, year_from, year_to,
+                           file_name):
+    # 1
+    country_years_map = get_country_missing_years_map(document, year_from, year_to)
+
+    # 2
+    data_with_nans = fill_missing_years_for_countries_in_data_set_with_nan(document, country_years_map)
+
+    # 3
+    data_frame = pd.DataFrame(data_with_nans,
+                              columns=x_data_column_names + y_data_column_name)
+    x_data_full = data_frame[x_data_column_names]
+    y_data_full = data_frame[y_data_column_name]
+    x_data_encoded_full = pd.get_dummies(x_data_full)
+
+    # 4
+    fill_data_sets(prediction_model, x_data_encoded_full, x_data_full, y_data_full, file_name)
+
+
+'''
+    SHARED FIELDS:
+'''
+year_from = 1990
+year_to = 2017
+documents_destination = "/home/sale/Desktop/GitHubSIAP/Data-Mining/tabele1990-2017/treba_regresija/"
+destination_to_save_new_documents = "/home/sale/PycharmProjects/fillovane_tabele/"
 
 '''
     MAIN
     DATA SETOVI
 '''
 
+
 '''
 AGRICULTURAL METHANE EMISSION DATA SET
 '''
 
-agricultural_methane_emission = utils.read_exel(
-    "/home/sale/Desktop/GitHubSIAP/Data-Mining/tabele1990-2017/treba_regresija/agricultural_methane_emission.xlsx")
-# cist ispis da proverimo da li je tabela dobro ucitana.
-# print(agricultural_methane_emission.head())
-# enkodujemo x_data... sa one hot encodingom, jer sadrzi kolonu year koja je string kategorickog tipa
-x_data_agricultural_methane_emission = agricultural_methane_emission[['Country Code', 'Year']]
-y_data_agricultural_methane_emission = agricultural_methane_emission[['Agricultural methane emissions (% of total)']]
+x_data_column_name_a_m_e = ['Country Code', 'Year']
+y_data_column_name_a_m_e = ['Agricultural methane emissions (% of total)']
 
-x_data_encoded_agricultural_methane_emission = pd.get_dummies(x_data_agricultural_methane_emission)
+agricultural_methane_emission, x_data_a_m_e, y_data_a_m_e, x_data_encoded_a_m_e, \
+x_train_a_m_e, x_test_a_m_e, y_train_a_m_e, y_test_a_m_e = get_important_data(
+    documents_destination + "agricultural_methane_emission_filled_data_set.xlsx",
+    "exel", x_data_column_name_a_m_e, y_data_column_name_a_m_e)
 
-x_train_agricultural_methane_emission, x_test_agricultural_methane_emission, y_train_agricultural_methane_emission, y_test_agricultural_methane_emission = utils.train_test_split_data(
-    x_data_encoded_agricultural_methane_emission,
-    y_data_agricultural_methane_emission,
-    0.2)
+prediction_model_a_m_e = predict_data_set(x_train_a_m_e,
+                                          x_test_a_m_e,
+                                          y_train_a_m_e,
+                                          y_test_a_m_e,
+                                          'AGRICULTURAL METHANE EMISSION DATA SET', 'mean',
+                                          'elastic')
 
-prediction_model_agrocultural = predict_data_set(x_train_agricultural_methane_emission,
-                                                 x_test_agricultural_methane_emission,
-                                                 y_train_agricultural_methane_emission,
-                                                 y_test_agricultural_methane_emission,
-                                                 'AGRICULTURAL METHANE EMISSION DATA SET', 'mean', 'elastic')
-
-fill_data_sets(prediction_model_agrocultural, x_data_encoded_agricultural_methane_emission,
-               x_data_agricultural_methane_emission,
-               y_data_agricultural_methane_emission, "agricultural_methane_emission_filled_data_set")
-
-'''
-CORRUPTION PERCEPTIONS INDEX DATA SET
-'''
-corruption_perceptions_index = utils.read_exel(
-    "/home/sale/Desktop/GitHubSIAP/Data-Mining/tabele1990-2017/treba_regresija/corruption_perceptions_index.xlsx")
-# cist ispis da proverimo da li je tabela dobro ucitana.
-# print(corruption_perceptions_index.head())
-# enkodujemo x_data... sa one hot encodingom, jer sadrzi kolonu year koja je string kategorickog tipa
-x_data_corruption_perceptions_index = corruption_perceptions_index[['Country Code', 'Year']]
-y_data_corruption_perceptions_index = corruption_perceptions_index[['Corruption index']]
-
-x_data_encoded_corruption_perceptions_index = pd.get_dummies(x_data_corruption_perceptions_index)
-x_train_corruption_perceptions_index, x_test_corruption_perceptions_index, y_train_corruption_perceptions_index, y_test_corruption_perceptions_index = utils.train_test_split_data(
-    x_data_encoded_corruption_perceptions_index,
-    y_data_corruption_perceptions_index,
-    0.2)
-
-prediction_model_corruption_perceptions_index =predict_data_set(x_train_corruption_perceptions_index, x_test_corruption_perceptions_index,
-                 y_train_corruption_perceptions_index, y_test_corruption_perceptions_index,
-                'CORRUPTION PERCEPTIONS INDEX DATA SET', 'min', 'elastic')
-
-fill_data_sets(prediction_model_corruption_perceptions_index, x_data_encoded_corruption_perceptions_index,
-               x_data_corruption_perceptions_index,
-               y_data_corruption_perceptions_index, "corruption_perceptions_index_filled_data_set")
+fill_missing_year_data(agricultural_methane_emission, prediction_model_a_m_e, x_data_column_name_a_m_e,
+                       y_data_column_name_a_m_e, year_from, year_to,
+                       'agricultural_methane_emission_filled_years_data_set')
 
 '''
 CORRUPTION PERCEPTION INDEX 2 DATASET
 '''
 
-coruption_perception_index_2 = utils.read_exel(
-    "/home/sale/Desktop/GitHubSIAP/Data-Mining/tabele1990-2017/treba_regresija/CoruptionPerceptionIndex_filtered.xlsx")
-# cist ispis da proverimo da li je tabela dobro ucitana.
-# print(coruption_perception_index_2.head())
-# enkodujemo x_data... sa one hot encodingom, jer sadrzi kolonu year koja je string kategorickog tipa
-x_data_coruption_perception_index_2 = coruption_perception_index_2[['Country Code', 'Year']]
-y_data_coruption_perception_index_2 = coruption_perception_index_2[['corruption_index']]
+x_data_column_name_c_p_i_2 = ['Country Code', 'Year']
+y_data_column_name_c_p_i_2 = ['corruption_index']
 
-x_data_encoded_coruption_perception_index_2 = pd.get_dummies(x_data_coruption_perception_index_2)
-x_train_coruption_perception_index_2, x_test_coruption_perception_index_2, y_train_coruption_perception_index_2, y_test_coruption_perception_index_2 = utils.train_test_split_data(
-    x_data_encoded_coruption_perception_index_2,
-    y_data_coruption_perception_index_2,
-    0.2)
+corruption_perception_index_2, x_data_c_p_i_2, y_data_c_p_i_2, x_data_encoded_c_p_i_2, \
+x_train_c_p_i_2, x_test_c_p_i_2, y_train_c_p_i_2, y_test_c_p_i_2 = get_important_data(
+    documents_destination + "coruption_perception_index_2_filled_data_set.xlsx",
+    "exel", x_data_column_name_c_p_i_2, y_data_column_name_c_p_i_2)
 
-prediction_model_coruption_perception_index_2 = predict_data_set(x_train_coruption_perception_index_2, x_test_coruption_perception_index_2,
-                y_train_coruption_perception_index_2, y_test_coruption_perception_index_2,
-                'CORRUPTION PERCEPTION INDEX 2 DATASET', 'mean', 'elastic')
+prediction_model_coruption_perception_index_2 = predict_data_set(x_train_c_p_i_2,
+                                                                 x_test_c_p_i_2,
+                                                                 y_train_c_p_i_2,
+                                                                 y_test_c_p_i_2,
+                                                                 'CORRUPTION PERCEPTION INDEX 2 DATASET', 'mean',
+                                                                 'elastic')
 
-fill_data_sets(prediction_model_coruption_perception_index_2, x_data_encoded_coruption_perception_index_2,
-               x_data_coruption_perception_index_2,
-               y_data_coruption_perception_index_2, "coruption_perception_index_2_filled_data_set")
+fill_missing_year_data(corruption_perception_index_2, prediction_model_coruption_perception_index_2,
+                       x_data_column_name_c_p_i_2,
+                       y_data_column_name_c_p_i_2, year_from, year_to, 'coruption_perception_index_2_filled_years')
 
 '''
 DAILY PER CAPITA SUPPLY OF CALORIES DATA SET
 '''
 
-daily_per_capita_supply_of_calories = utils.read_exel(
-    "/home/sale/Desktop/GitHubSIAP/Data-Mining/tabele1990-2017/treba_regresija/daily-per-capita-supply-of-calories.xlsx")
-# cist ispis da proverimo da li je tabela dobro ucitana.
-# print(daily_per_capita_supply_of_calories.head())
-# enkodujemo x_data... sa one hot encodingom, jer sadrzi kolonu year koja je string kategorickog tipa
-x_data_daily_per_capita_supply_of_calories = daily_per_capita_supply_of_calories[['Country Code', 'Year']]
-y_data_daily_per_capita_supply_of_calories = daily_per_capita_supply_of_calories[['Daily caloric supply (kcal/person/day)']]
+x_data_column_name_d_p_c_s_o_c = ['Country Code', 'Year']
+y_data_column_name_d_p_c_s_o_c = ['Daily caloric supply (kcal/person/day)']
 
-x_data_encoded_daily_per_capita_supply_of_calories = pd.get_dummies(x_data_daily_per_capita_supply_of_calories)
-x_train_daily_per_capita_supply_of_calories, x_test_daily_per_capita_supply_of_calories, y_train_daily_per_capita_supply_of_calories, y_test_daily_per_capita_supply_of_calories = utils.train_test_split_data(
-    x_data_encoded_daily_per_capita_supply_of_calories,
-    y_data_daily_per_capita_supply_of_calories,
-    0.2)
+daily_per_capita_supply_of_calories, x_data_d_p_c_s_o_c, y_data_d_p_c_s_o_c, x_data_encoded_d_p_c_s_o_c, \
+x_train_d_p_c_s_o_c, x_test_d_p_c_s_o_c, y_train_d_p_c_s_o_c, y_test_d_p_c_s_o_c = get_important_data(
+    documents_destination + "daily-per-capita-supply-of-calories.xlsx",
+    "exel", x_data_column_name_d_p_c_s_o_c, y_data_column_name_d_p_c_s_o_c)
 
-prediction_model_daily_per_capita_supply_of_calories = predict_data_set(x_train_daily_per_capita_supply_of_calories, x_test_daily_per_capita_supply_of_calories,
-                y_train_daily_per_capita_supply_of_calories, y_test_daily_per_capita_supply_of_calories,
-                'DAILY PER CAPITA SUPPLY OF CALORIES DATA SET', 'mean', 'elastic')
+prediction_model_d_p_c_s_o_c = predict_data_set(x_train_d_p_c_s_o_c,
+                                                x_test_d_p_c_s_o_c,
+                                                y_train_d_p_c_s_o_c,
+                                                y_test_d_p_c_s_o_c,
+                                                'DAILY PER CAPITA SUPPLY OF CALORIES DATA SET', 'mean',
+                                                'elastic')
 
-fill_data_sets(prediction_model_daily_per_capita_supply_of_calories, x_data_encoded_daily_per_capita_supply_of_calories,
-               x_data_daily_per_capita_supply_of_calories,
-               y_data_daily_per_capita_supply_of_calories, "daily_per_capita_supply_of_calories_filled_data_set")
+fill_missing_year_data(daily_per_capita_supply_of_calories, prediction_model_d_p_c_s_o_c,
+                       x_data_column_name_d_p_c_s_o_c,
+                       y_data_column_name_d_p_c_s_o_c, year_from, year_to,
+                       'daily_per_capita_supply_of_calories_filled_years_data_set')
 
 '''
 LIFE SATISFACTION DATA SET
 '''
-life_satisfaction = utils.read_exel(
-    "/home/sale/Desktop/GitHubSIAP/Data-Mining/tabele1990-2017/treba_regresija/life_satisfaction.xlsx")
-# cist ispis da proverimo da li je tabela dobro ucitana.
-# print(life_satisfaction.head())
-# enkodujemo x_data... sa one hot encodingom, jer sadrzi kolonu year koja je string kategorickog tipa
-x_data_life_satisfaction = life_satisfaction[['Country Code', 'Year']]
-y_data_life_satisfaction = life_satisfaction[['Happines']]
 
-x_data_encoded_life_satisfaction = pd.get_dummies(x_data_life_satisfaction)
-x_train_life_satisfaction, x_test_life_satisfaction, y_train_life_satisfaction, y_test_life_satisfaction = utils.train_test_split_data(
-    x_data_encoded_life_satisfaction,
-    y_data_life_satisfaction,
-    0.2)
+x_data_column_name_l_s = ['Country Code', 'Year']
+y_data_column_name_l_s = ['Happines']
 
-prediction_model_life_satisfaction = predict_data_set(x_train_life_satisfaction, x_test_life_satisfaction, y_train_life_satisfaction,
-                y_test_life_satisfaction, 'LIFE SATISFACTION DATA SET', 'mean', 'elastic')
+life_satisfaction, x_data_l_s, y_data_l_s, x_data_encoded_l_s, \
+x_train_l_s, x_test_l_s, y_train_l_s, y_test_l_s = get_important_data(
+    documents_destination + "life_satisfaction.xlsx",
+    "exel", x_data_column_name_l_s, y_data_column_name_l_s)
 
+prediction_model_l_s = predict_data_set(x_train_l_s,
+                                        x_test_l_s,
+                                        y_train_l_s,
+                                        y_test_l_s,
+                                        'LIFE SATISFACTION DATA SET', 'mean',
+                                        'elastic')
 
-fill_data_sets(prediction_model_life_satisfaction, x_data_encoded_life_satisfaction,
-               x_data_life_satisfaction,
-               y_data_life_satisfaction, "life_satisfaction_filled_data_set")
+fill_missing_year_data(life_satisfaction, prediction_model_l_s,
+                       x_data_column_name_l_s,
+                       y_data_column_name_l_s, year_from, year_to,
+                       'life_satisfaction_filled_years_data_set')
 
 '''
 POLITICAL REGIME UPDATED2016 DATA SET
 '''
-political_regime_updated2016 = utils.read_exel(
-    "/home/sale/Desktop/GitHubSIAP/Data-Mining/tabele1990-2017/treba_regresija/political-regime-updated2016.xlsx")
-# cist ispis da proverimo da li je tabela dobro ucitana.
-# print(political_regime_updated2016.head())
-# enkodujemo x_data... sa one hot encodingom, jer sadrzi kolonu year koja je string kategorickog tipa
-x_data_political_regime_updated2016 = political_regime_updated2016[['Country Code', 'Year']]
-y_data_political_regime_updated2016 = political_regime_updated2016[['Political Regime (OWID based on Polity IV and Wimmer & Min) (Score)']]
 
-x_data_encoded_political_regime_updated2016 = pd.get_dummies(x_data_political_regime_updated2016)
-x_train_political_regime_updated2016, x_test_political_regime_updated2016, y_train_political_regime_updated2016, y_test_political_regime_updated2016 = utils.train_test_split_data(
-    x_data_encoded_political_regime_updated2016,
-    y_data_political_regime_updated2016,
-    0.2)
+x_data_column_name_p_r_u = ['Country Code', 'Year']
+y_data_column_name_p_r_u = ['Political Regime (OWID based on Polity IV and Wimmer & Min) (Score)']
 
-prediction_model_political_regime_updated2016 = predict_data_set(x_train_political_regime_updated2016, x_test_political_regime_updated2016,
-                y_train_political_regime_updated2016, y_test_political_regime_updated2016,
-                'POLITICAL REGIME UPDATED2016 DATA SET', 'mean', 'elastic')
+political_regime_updated2016, x_data_p_r_u, y_data_p_r_u, x_data_encoded_p_r_u, \
+x_train_p_r_u, x_test_p_r_u, y_train_p_r_u, y_test_p_r_u = get_important_data(
+    documents_destination + "political-regime-updated2016.xlsx",
+    "exel", x_data_column_name_p_r_u, y_data_column_name_p_r_u)
 
+prediction_model_p_r_u = predict_data_set(x_train_p_r_u,
+                                          x_test_p_r_u,
+                                          y_train_p_r_u,
+                                          y_test_p_r_u,
+                                          'POLITICAL REGIME UPDATED2016 DATA SET', 'mean',
+                                          'elastic')
 
-fill_data_sets(prediction_model_political_regime_updated2016, x_data_encoded_political_regime_updated2016,
-               x_data_political_regime_updated2016,
-               y_data_political_regime_updated2016, "political_regime_updated2016_filled_data_set")
+fill_missing_year_data(political_regime_updated2016, prediction_model_p_r_u,
+                       x_data_column_name_p_r_u,
+                       y_data_column_name_p_r_u, year_from, year_to,
+                       'political_regime_updated2016_filled_years_data_set')
 
 '''
-SHARE WITH ALCOHOL OR DRUG USE DISORDERS 
+SHARE WITH ALCOHOL OR DRUG USE DISORDERS
 '''
-share_with_alcohol_or_drug_use_disorders = utils.read_exel(
-    "/home/sale/Desktop/GitHubSIAP/Data-Mining/tabele1990-2017/treba_regresija/share-with-alcohol-or-drug-use-disorders.xlsx")
-# cist ispis da proverimo da li je tabela dobro ucitana.
-# print(share_with_alcohol_or_drug_use_disorders.head())
-# enkodujemo x_data... sa one hot encodingom, jer sadrzi kolonu year koja je string kategorickog tipa
-x_data_share_with_alcohol_or_drug_use_disorders = share_with_alcohol_or_drug_use_disorders[['Country Code', 'Year']]
-y_data_share_with_alcohol_or_drug_use_disorders = share_with_alcohol_or_drug_use_disorders[['Prevalence - Alcohol and substance use disorders: Both (age-standardized percent) (%)']]
+x_data_column_name_s_w_a_o_d_u_d = ['Country Code', 'Year']
+y_data_column_name_s_w_a_o_d_u_d = [
+    'Prevalence - Alcohol and substance use disorders: Both (age-standardized percent) (%)']
 
-x_data_encoded_share_with_alcohol_or_drug_use_disorders = pd.get_dummies(x_data_share_with_alcohol_or_drug_use_disorders)
-x_train_share_with_alcohol_or_drug_use_disorders, x_test_share_with_alcohol_or_drug_use_disorders, y_train_share_with_alcohol_or_drug_use_disorders, y_test_share_with_alcohol_or_drug_use_disorders = utils.train_test_split_data(
-    x_data_encoded_share_with_alcohol_or_drug_use_disorders,
-    y_data_share_with_alcohol_or_drug_use_disorders,
-    0.2)
+share_with_alcohol_or_drug_use_disorders, x_data_s_w_a_o_d_u_d, y_data_s_w_a_o_d_u_d, x_data_encoded_s_w_a_o_d_u_d, \
+x_train_s_w_a_o_d_u_d, x_test_s_w_a_o_d_u_d, y_train_s_w_a_o_d_u_d, y_test_s_w_a_o_d_u_d = get_important_data(
+    documents_destination + "share-with-alcohol-or-drug-use-disorders.xlsx",
+    "exel", x_data_column_name_s_w_a_o_d_u_d, y_data_column_name_s_w_a_o_d_u_d)
 
-prediction_model_share_with_alcohol_or_drug_use_disorders = predict_data_set(x_train_share_with_alcohol_or_drug_use_disorders, x_test_share_with_alcohol_or_drug_use_disorders,
-                y_train_share_with_alcohol_or_drug_use_disorders, y_test_share_with_alcohol_or_drug_use_disorders,
-                'SHARE WITH ALCOHOL OR DRUG USE DISORDERS', 'mean', 'elastic')
+prediction_model_s_w_a_o_d_u_d = predict_data_set(x_train_s_w_a_o_d_u_d,
+                                                  x_test_s_w_a_o_d_u_d,
+                                                  y_train_s_w_a_o_d_u_d,
+                                                  y_test_s_w_a_o_d_u_d,
+                                                  'SHARE WITH ALCOHOL OR DRUG USE DISORDERS', 'mean',
+                                                  'elastic')
 
-
-fill_data_sets(prediction_model_share_with_alcohol_or_drug_use_disorders, x_data_encoded_share_with_alcohol_or_drug_use_disorders,
-               x_data_share_with_alcohol_or_drug_use_disorders,
-               y_data_share_with_alcohol_or_drug_use_disorders, "share_with_alcohol_or_drug_use_disorders_filled_data_set")
+fill_missing_year_data(share_with_alcohol_or_drug_use_disorders, prediction_model_s_w_a_o_d_u_d,
+                       x_data_column_name_s_w_a_o_d_u_d,
+                       y_data_column_name_s_w_a_o_d_u_d, year_from, year_to,
+                       'share_with_alcohol_or_drug_use_disorders_filled_years_data_set')
 
 '''
 UN MIGRANT STOCK BY ORIGIN AND DESTINATION 2019
 '''
-UN_MigrantStockByOriginAndDestination_2019 = utils.read_exel(
-    "/home/sale/Desktop/GitHubSIAP/Data-Mining/tabele1990-2017/treba_regresija/UN_MigrantStockByOriginAndDestination_2019.xlsx")
-# cist ispis da proverimo da li je tabela dobro ucitana.
-# print(UN_MigrantStockByOriginAndDestination_2019.head())
-# enkodujemo x_data... sa one hot encodingom, jer sadrzi kolonu year koja je string kategorickog tipa
-x_data_UN_MigrantStockByOriginAndDestination_2019 = UN_MigrantStockByOriginAndDestination_2019[['Country Code', 'Year']]
-y_data_UN_MigrantStockByOriginAndDestination_2019 = UN_MigrantStockByOriginAndDestination_2019[['Total origin']]
 
-x_data_encoded_UN_MigrantStockByOriginAndDestination_2019 = pd.get_dummies(x_data_UN_MigrantStockByOriginAndDestination_2019)
-x_train_UN_MigrantStockByOriginAndDestination_2019, x_test_UN_MigrantStockByOriginAndDestination_2019, y_train_UN_MigrantStockByOriginAndDestination_2019, y_test_UN_MigrantStockByOriginAndDestination_2019 = utils.train_test_split_data(
-    x_data_encoded_UN_MigrantStockByOriginAndDestination_2019,
-    y_data_UN_MigrantStockByOriginAndDestination_2019,
-    0.2)
+x_data_column_name_un_m_s_b_o_a_d = ['Country Code', 'Year']
+y_data_column_name_un_m_s_b_o_a_d = ['Total origin']
 
-prediction_model_UN_MigrantStockByOriginAndDestination_2019 = predict_data_set(x_train_UN_MigrantStockByOriginAndDestination_2019, x_test_UN_MigrantStockByOriginAndDestination_2019,
-                y_train_UN_MigrantStockByOriginAndDestination_2019, y_test_UN_MigrantStockByOriginAndDestination_2019,
-                'UN MIGRANT STOCK BY ORIGIN AND DESTINATION 2019', 'mean', 'elastic')
+UN_MigrantStockByOriginAndDestination_2019, x_data_un_m_s_b_o_a_d, y_data_un_m_s_b_o_a_d, x_data_encoded_un_m_s_b_o_a_d, \
+x_train_un_m_s_b_o_a_d, x_test_un_m_s_b_o_a_d, y_train_un_m_s_b_o_a_d, y_test_un_m_s_b_o_a_d = get_important_data(
+    documents_destination + "UN_MigrantStockByOriginAndDestination_2019.xlsx",
+    "exel", x_data_column_name_un_m_s_b_o_a_d, y_data_column_name_un_m_s_b_o_a_d)
 
-fill_data_sets(prediction_model_UN_MigrantStockByOriginAndDestination_2019, x_data_encoded_UN_MigrantStockByOriginAndDestination_2019,
-               x_data_UN_MigrantStockByOriginAndDestination_2019,
-               y_data_UN_MigrantStockByOriginAndDestination_2019, "UN_MigrantStockByOriginAndDestination_2019_filled_data_set")
+prediction_model_un_m_s_b_o_a_d = predict_data_set(x_train_un_m_s_b_o_a_d,
+                                                   x_test_un_m_s_b_o_a_d,
+                                                   y_train_un_m_s_b_o_a_d,
+                                                   y_test_un_m_s_b_o_a_d,
+                                                   'UN MIGRANT STOCK BY ORIGIN AND DESTINATION 2019', 'mean',
+                                                   'elastic')
 
-'''
-WARS FORMATTED
-'''
-wars_formated = utils.read_exel(
-    "/home/sale/Desktop/GitHubSIAP/Data-Mining/tabele1990-2017/treba_regresija/wars_formated.xlsx")
-# cist ispis da proverimo da li je tabela dobro ucitana.
-# print(wars_formated.head())
-# enkodujemo x_data... sa one hot encodingom, jer sadrzi kolonu year koja je string kategorickog tipa
-x_data_encoded_wars_formated = pd.get_dummies(wars_formated[['Country Code', 'Year']])
-x_train_wars_formated, x_test_wars_formated, y_train_wars_formated, y_test_wars_formated = utils.train_test_split_data(
-    x_data_encoded_wars_formated,
-    wars_formated[
-        ['won_war']],
-    0.2)
-
-# predict_data_set(x_train_wars_formated, x_test_wars_formated, y_train_wars_formated, y_test_wars_formated,
-#                'WARS FORMATTED DATA SET')
+fill_missing_year_data(UN_MigrantStockByOriginAndDestination_2019, prediction_model_un_m_s_b_o_a_d,
+                       x_data_column_name_un_m_s_b_o_a_d,
+                       y_data_column_name_un_m_s_b_o_a_d, year_from, year_to,
+                       'UN_MigrantStockByOriginAndDestination_2019_filled_year_data_set')
 
 '''
 FREEDOM OF PRESS DATA, LEGAL ENVIRONMENT AS PREDICTING VALUE
 '''
-freedom_of_the_press_data_legal_environment = utils.read_exel(
-    "/home/sale/Desktop/GitHubSIAP/Data-Mining/tabele1990-2017/treba_regresija/Freedom_of_the_Press_Data.xlsx")
-# cist ispis da proverimo da li je tabela dobro ucitana.
-# print(freedom_of_the_press_data_legal_environment.head())
-# enkodujemo x_data... sa one hot encodingom, jer sadrzi kolonu year koja je string kategorickog tipa
-x_data_freedom_of_the_press_data_legal_environment = freedom_of_the_press_data_legal_environment[['Country Code', 'Year','Political environment','Economic environment', 'Total Score']]
-y_data_freedom_of_the_press_data_legal_environment = freedom_of_the_press_data_legal_environment[['Legal environment']]
+# 'Political environment', 'Economic environment', 'Total Score'
+x_data_column_name_f_o_p_d = ['Country Code', 'Year']
+y_data_column_name_f_o_p_d = ['Total Score']
 
-x_data_encoded_freedom_of_the_press_data_legal_environment = pd.get_dummies(x_data_freedom_of_the_press_data_legal_environment)
-x_train_freedom_of_the_press_data_legal_environment, x_test_freedom_of_the_press_data_legal_environment, y_train_freedom_of_the_press_data_legal_environment, y_test_freedom_of_the_press_data_legal_environment = utils.train_test_split_data(
-    x_data_encoded_freedom_of_the_press_data_legal_environment,
-    y_data_freedom_of_the_press_data_legal_environment,
-    0.2)
+freedom_of_the_press_data, x_data_f_o_p_d, y_data_f_o_p_d, x_data_encoded_f_o_p_d, \
+x_train_f_o_p_d, x_test_f_o_p_d, y_train_f_o_p_d, y_test_f_o_p_d = get_important_data(
+    documents_destination + "Freedom_of_the_Press_Data.xlsx",
+    "exel", x_data_column_name_f_o_p_d, y_data_column_name_f_o_p_d)
 
-prediction_model_freedom_of_the_press_data_legal_environment = predict_data_set(x_train_freedom_of_the_press_data_legal_environment,
-               x_test_freedom_of_the_press_data_legal_environment,
-               y_train_freedom_of_the_press_data_legal_environment,
-               y_test_freedom_of_the_press_data_legal_environment,
-               'FREEDOM OF PRESS DATA, LEGAL ENVIRONMENT AS PREDICTING VALUE', 'zero', 'elastic')
+freedom_of_the_press_data = freedom_of_the_press_data[['Country Code', 'Year', 'Total Score']]
+prediction_model_f_o_p_d = predict_data_set(x_train_f_o_p_d,
+                                                   x_test_f_o_p_d,
+                                                   y_train_f_o_p_d,
+                                                   y_test_f_o_p_d,
+                                                   'FREEDOM OF PRESS DATA DATA SET', 'zero',
+                                                   'elastic')
 
-
-fill_data_sets(prediction_model_freedom_of_the_press_data_legal_environment, x_data_encoded_freedom_of_the_press_data_legal_environment.fillna(0),
-               x_data_freedom_of_the_press_data_legal_environment.fillna(0),
-               y_data_freedom_of_the_press_data_legal_environment, "freedom_of_the_press_data_legal_environment_filled_data_set")
-
-'''
-FREEDOM OF PRESS DATA, POLITICAL ENVIRONMENT AS PREDICTING VALUE
-'''
-freedom_of_the_press_data_political_environment = utils.read_exel(
-    "/home/sale/Desktop/GitHubSIAP/Data-Mining/tabele1990-2017/treba_regresija/Freedom_of_the_Press_Data.xlsx")
-# cist ispis da proverimo da li je tabela dobro ucitana.
-# print(freedom_of_the_press_data_political_environment.head())
-# enkodujemo x_data... sa one hot encodingom, jer sadrzi kolonu year koja je string kategorickog tipa
-x_data_freedom_of_the_press_data_political_environment = freedom_of_the_press_data_political_environment[['Country Code', 'Year', 'Legal environment', 'Economic environment', 'Total Score']]
-y_data_freedom_of_the_press_data_political_environment = freedom_of_the_press_data_political_environment[['Political environment']]
-
-x_data_encoded_freedom_of_the_press_data_political_environment = pd.get_dummies(x_data_freedom_of_the_press_data_political_environment)
-x_train_freedom_of_the_press_data_political_environment, x_test_freedom_of_the_press_data_political_environment, y_train_freedom_of_the_press_data_political_environment, y_test_freedom_of_the_press_data_political_environment = utils.train_test_split_data(
-    x_data_encoded_freedom_of_the_press_data_political_environment,
-    y_data_freedom_of_the_press_data_political_environment,
-    0.2)
-
-prediction_model_freedom_of_the_press_data_political_environment = predict_data_set(x_train_freedom_of_the_press_data_political_environment,
-                x_test_freedom_of_the_press_data_political_environment,
-                y_train_freedom_of_the_press_data_political_environment,
-                y_test_freedom_of_the_press_data_political_environment,
-                'FREEDOM OF PRESS DATA, POLITICAL ENVIRONMENT AS PREDICTING VALUE', 'zero', 'elastic')
-
-
-fill_data_sets(prediction_model_freedom_of_the_press_data_political_environment, x_data_encoded_freedom_of_the_press_data_political_environment.fillna(0),
-               x_data_freedom_of_the_press_data_political_environment.fillna(0),
-               y_data_freedom_of_the_press_data_political_environment, "freedom_of_the_press_data_political_environment_filled_data_set")
-
-
-'''
-FREEDOM OF PRESS DATA, ECONOMIC ENVIRONMENT AS PREDICTING VALUE
-'''
-freedom_of_the_press_data_economic_environment = utils.read_exel(
-    "/home/sale/Desktop/GitHubSIAP/Data-Mining/tabele1990-2017/treba_regresija/Freedom_of_the_Press_Data.xlsx")
-# cist ispis da proverimo da li je tabela dobro ucitana.
-# print(freedom_of_the_press_data_economic_environment.head())
-# enkodujemo x_data... sa one hot encodingom, jer sadrzi kolonu year koja je string kategorickog tipa
-x_data_freedom_of_the_press_data_economic_environment = freedom_of_the_press_data_economic_environment[['Country Code', 'Year', 'Legal environment', 'Political environment', 'Total Score']]
-y_data_freedom_of_the_press_data_economic_environment = freedom_of_the_press_data_economic_environment[['Economic environment']]
-
-x_data_encoded_freedom_of_the_press_data_economic_environment = pd.get_dummies(x_data_freedom_of_the_press_data_economic_environment)
-x_train_freedom_of_the_press_data_economic_environment, x_test_freedom_of_the_press_data_economic_environment, y_train_freedom_of_the_press_data_economic_environment, y_test_freedom_of_the_press_data_economic_environment = utils.train_test_split_data(
-    x_data_encoded_freedom_of_the_press_data_economic_environment,
-    y_data_freedom_of_the_press_data_economic_environment,
-    0.2)
-
-prediction_model_freedom_of_the_press_data_economic_environment = predict_data_set(x_train_freedom_of_the_press_data_economic_environment,
-               x_test_freedom_of_the_press_data_economic_environment,
-               y_train_freedom_of_the_press_data_economic_environment,
-               y_test_freedom_of_the_press_data_economic_environment,
-              'FREEDOM OF PRESS DATA, ECONOMIC ENVIRONMENT AS PREDICTING VALUE', 'zero', 'elastic')
-
-
-fill_data_sets(prediction_model_freedom_of_the_press_data_economic_environment, x_data_encoded_freedom_of_the_press_data_economic_environment.fillna(0),
-               x_data_freedom_of_the_press_data_economic_environment.fillna(0),
-               y_data_freedom_of_the_press_data_economic_environment, "freedom_of_the_press_data_economic_environment_filled_data_set")
-
-
-'''
-FREEDOM OF PRESS DATA, TOTAL SCORE AS PREDICTING VALUE
-'''
-freedom_of_the_press_data_total_score = utils.read_exel(
-    "/home/sale/Desktop/GitHubSIAP/Data-Mining/tabele1990-2017/treba_regresija/Freedom_of_the_Press_Data.xlsx")
-# cist ispis da proverimo da li je tabela dobro ucitana.
-# print(freedom_of_the_press_data_total_score.head())
-# enkodujemo x_data... sa one hot encodingom, jer sadrzi kolonu year koja je string kategorickog tipa
-x_data_freedom_of_the_press_data_total_score = freedom_of_the_press_data_total_score[['Country Code', 'Year', 'Legal environment', 'Political environment', 'Economic environment']]
-y_data_freedom_of_the_press_data_total_score = freedom_of_the_press_data_total_score[['Total Score']]
-
-x_data_encoded_freedom_of_the_press_data_total_score = pd.get_dummies(x_data_freedom_of_the_press_data_total_score)
-x_train_freedom_of_the_press_data_total_score, x_test_freedom_of_the_press_data_total_score, y_train_freedom_of_the_press_data_total_score, y_test_freedom_of_the_press_data_total_score = utils.train_test_split_data(
-    x_data_encoded_freedom_of_the_press_data_total_score,
-    y_data_freedom_of_the_press_data_total_score,
-    0.2)
-
-prediction_model_freedom_of_the_press_data_total_score = predict_data_set(x_train_freedom_of_the_press_data_total_score, x_test_freedom_of_the_press_data_total_score,
-               y_train_freedom_of_the_press_data_total_score, y_test_freedom_of_the_press_data_total_score,
-               'FREEDOM OF PRESS DATA, TOTAL SCORE AS PREDICTING VALUE', 'zero', 'elastic')
-
-
-fill_data_sets(prediction_model_freedom_of_the_press_data_total_score, x_data_encoded_freedom_of_the_press_data_total_score.fillna(0),
-               x_data_freedom_of_the_press_data_total_score.fillna(0),
-               y_data_freedom_of_the_press_data_total_score, "freedom_of_the_press_data_total_score_filled_data_set")
+fill_missing_year_data(freedom_of_the_press_data, prediction_model_f_o_p_d,
+                       x_data_column_name_f_o_p_d,
+                       y_data_column_name_f_o_p_d, year_from, year_to,
+                       'freedom_of_press_data_filled_total_score_year_data_set')
