@@ -247,7 +247,7 @@ def fill_missing_year_data(document, prediction_model, x_data_column_names, y_da
 '''
 year_from = 1990
 year_to = 2017
-documents_destination = "/home/sale/Desktop/GitHubSIAP/Data-Mining/tabele1990-2017/treba_regresija/"
+documents_destination = "/home/sale/Desktop/GitHubSIAP/Data-Mining/Trash_doce_dobro_kada_budemo_pisali_pdf/treba_regresija/"
 destination_to_save_new_documents = "/home/sale/PycharmProjects/fillovane_tabele/"
 
 '''
