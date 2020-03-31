@@ -1,0 +1,1350 @@
+country,year,won_war
+Russia,1818,1
+Russia,1819,1
+Russia,1820,1
+Russia,1821,1
+Russia,1822,1
+Austria,1821,1
+Two Sicilies,1820,1
+Two Sicilies,1821,1
+Spain,1821,0
+Spain,1822,0
+Spain,1823,0
+Austria,1821,1
+Sardinia,1821,1
+Ottoman Empire,1821,0
+Ottoman Empire,1822,0
+Ottoman Empire,1823,0
+Ottoman Empire,1824,0
+Ottoman Empire,1825,0
+Ottoman Empire,1826,0
+Ottoman Empire,1827,0
+Ottoman Empire,1828,0
+United Kingdom,1827,1
+France,1827,1
+Russia,1827,1
+Russia,1828,1
+Egypt,1824,1
+Ottoman Empire,1826,1
+United Kingdom,1831,1
+United Kingdom,1832,1
+United Kingdom,1833,1
+United Kingdom,1834,1
+Portugal,1828,0
+Portugal,1829,0
+Portugal,1830,0
+Portugal,1831,0
+Portugal,1832,0
+Portugal,1833,0
+Portugal,1834,0
+Russia,1830,1
+Russia,1831,1
+Russia,1832,1
+Ottoman Empire,1830,1
+Albania,1830,0
+Ottoman Empire,1831,1
+Albania,1831,0
+France,1830,0
+Netherlands,1830,0
+Belgium,1830,1
+Russia,1831,1
+Ottoman Empire,1831,0
+Egypt,1831,1
+Ottoman Empire,1832,0
+Egypt,1832,1
+Mexico,1832,0
+Egypt,1834,1
+Portugal,1835,1
+Portugal,1836,1
+Spain,1834,1
+Spain,1835,1
+Spain,1836,1
+Spain,1837,1
+Spain,1838,1
+Spain,1839,1
+Spain,1840,1
+France,1835,1
+France,1836,1
+France,1837,1
+France,1838,1
+France,1839,1
+United Kingdom,1835,1
+United Kingdom,1836,1
+United Kingdom,1837,1
+Russia,1834,0
+Brazil,1835,1
+Brazil,1836,1
+Brazil,1837,1
+Brazil,1835,1
+Brazil,1836,1
+Brazil,1837,1
+Brazil,1838,1
+Brazil,1839,1
+Brazil,1840,1
+Brazil,1841,1
+Brazil,1842,1
+Brazil,1843,1
+Brazil,1844,1
+Brazil,1845,1
+Mexico,1835,0
+Mexico,1836,0
+Ottoman Empire,1836,1
+Bosnia,1836,0
+Ottoman Empire,1837,1
+Bosnia,1837,0
+Russia,1836,1
+Russia,1837,1
+Russia,1838,1
+Russia,1839,1
+Russia,1840,1
+Russia,1841,1
+Russia,1842,1
+Russia,1843,1
+Russia,1844,1
+Russia,1845,1
+Russia,1846,1
+Russia,1847,1
+Russia,1848,1
+Russia,1849,1
+Russia,1850,1
+Russia,1851,1
+Russia,1852,1
+Brazil,1837,1
+Brazil,1838,1
+Ottoman Empire,1839,0
+Egypt,1839,1
+Colombia,1840,0
+Colombia,1841,0
+Colombia,1842,0
+United Kingdom,1840,1
+Ottoman Empire,1840,1
+Egypt,1840,0
+Argentina,1841,1
+Argentina,1842,1
+Ottoman Empire,1841,1
+Bosnia,1841,0
+Mexico,1841,0
+Ottoman Empire,1842,1
+Ottoman Empire,1843,1
+Spain,1847,1
+Spain,1848,1
+Spain,1849,1
+Two Sicilies,1848,1
+Venezuela,1848,1
+Venezuela,1849,1
+Austria,1848,1
+Austria,1848,0
+France,1848,1
+Mexico,1848,1
+Mexico,1849,1
+Mexico,1850,1
+Mexico,1851,1
+Mexico,1852,1
+Mexico,1853,1
+Mexico,1854,1
+Mexico,1855,1
+Austria,1848,1
+Hungary,1848,0
+Austria,1849,1
+Hungary,1849,0
+Russia,1849,1
+Chile,1851,1
+Ottoman Empire,1852,0
+Montenegro,1852,1
+Ottoman Empire,1853,0
+Montenegro,1853,1
+Peru,1853,0
+Peru,1854,0
+Peru,1855,0
+Mexico,1855,1
+Mexico,1856,1
+Peru,1856,1
+Peru,1857,1
+Peru,1858,1
+Mexico,1858,0
+Mexico,1859,0
+Mexico,1860,0
+Mexico,1861,0
+Ottoman Empire,1858,0
+Montenegro,1858,1
+Ottoman Empire,1859,0
+Montenegro,1859,1
+Venezuela,1859,0
+Venezuela,1860,0
+Venezuela,1861,0
+Venezuela,1862,0
+Venezuela,1863,0
+Colombia,1860,0
+Colombia,1861,0
+China,1860,1
+China,1861,1
+China,1862,1
+China,1863,1
+China,1864,1
+China,1865,1
+China,1866,1
+United Kingdom,1862,1
+China,1860,1
+China,1861,1
+China,1862,1
+China,1863,1
+China,1864,1
+China,1865,1
+China,1866,1
+China,1867,1
+China,1868,1
+China,1860,1
+China,1861,1
+China,1862,1
+China,1863,1
+China,1864,1
+China,1865,1
+China,1866,1
+China,1867,1
+China,1868,1
+China,1869,1
+China,1870,1
+China,1871,1
+China,1872,1
+China,1860,1
+China,1861,1
+China,1862,1
+China,1863,1
+China,1864,1
+China,1865,1
+China,1866,1
+China,1867,1
+China,1868,1
+China,1869,1
+China,1870,1
+China,1871,1
+China,1872,1
+United States of America,1861,1
+United States of America,1862,1
+United States of America,1863,1
+United States of America,1864,1
+United States of America,1865,1
+Argentina,1861,0
+Turkey,1861,0
+Montenegro,1861,1
+Turkey,1862,0
+Montenegro,1862,1
+China,1862,1
+China,1863,1
+China,1864,1
+China,1865,1
+China,1866,1
+China,1867,1
+China,1868,1
+China,1869,1
+China,1870,1
+China,1871,1
+China,1872,1
+China,1873,1
+Boliva,1862,1
+Russia,1863,1
+Russia,1864,1
+Argentina,1863,1
+Russia,1871,0
+China,1864,0
+China,1865,0
+China,1866,0
+China,1867,0
+China,1868,0
+China,1869,0
+China,1870,0
+China,1871,0
+Ottoman Empire,1866,1
+Ottoman Empire,1867,1
+Argentina,1866,1
+Argentina,1867,1
+Mexico,1867,0
+Japan,1868,1
+Venezuela,1868,0
+Spain,1868,0
+Haiti,1869,0
+Argentina,1870,1
+Argentina,1871,1
+Bolivia,1870,0
+Bolivia,1871,0
+France,1871,1
+Spain,1872,1
+Spain,1873,1
+Spain,1874,1
+Spain,1875,1
+Spain,1876,1
+Spain,1874,1
+Spain,1875,1
+Argentina,1874,1
+Ottoman Empire,1875,0
+Ottoman Empire,1876,0
+Mexico,1876,0
+China,1876,1
+China,1877,1
+Colombia,1876,1
+Colombia,1877,1
+Japan,1877,1
+Argentina,1879,1
+Argentina,1880,1
+Argentina,1880,1
+Haiti,1883,1
+Haiti,1884,1
+Colombia,1884,1
+Colombia,1885,1
+Peru,1885,1
+Ottoman Empire,1890,1
+Ottoman Empire,1891,1
+Ottoman Empire,1892,1
+Chile,1891,0
+China,1891,1
+Brazil,1893,1
+Brazil,1894,1
+Brazil,1893,1
+Brazil,1894,1
+Japan,1894,1
+Korea,1894,1
+Peru,1894,0
+Peru,1895,0
+Colombia,1895,1
+Ecuador,1895,0
+China,1895,1
+China,1896,1
+Ottoman Empire,1895,1
+Ottoman Empire,1896,1
+Ottoman Empire,1896,0
+Ottoman Empire,1897,0
+Brazil,1896,1
+Brazil,1897,1
+Venezuela,1899,0
+Mexico,1899,1
+Mexico,1900,1
+Colombia,1899,1
+Colombia,1900,1
+Colombia,1901,1
+Colombia,1902,1
+Venezuela,1901,1
+Venezuela,1902,1
+Venezuela,1903,1
+Ottoman Empire,1903,1
+Uruguay,1904,1
+Ottoman Empire,1904,0
+Ottoman Empire,1905,0
+Ottoman Empire,1906,0
+Russia,1905,1
+Russia,1906,1
+Romania,1907,1
+France,1907,0
+France,1908,0
+Morocco,1907,0
+Morocco,1908,0
+Russia,1909,0
+Iran,1908,0
+Iran,1909,0
+Ottoman Empire,1909,1
+Ottoman Empire,1910,0
+Albania,1910,1
+Ottoman Empire,1911,0
+Albania,1911,1
+Ottoman Empire,1912,0
+Albania,1912,1
+Ottoman Empire,1910,0
+Ottoman Empire,1911,0
+Mexico,1910,0
+Mexico,1911,0
+Mexico,1912,0
+Mexico,1913,0
+Mexico,1914,0
+Paraguay,1911,0
+Paraguay,1912,0
+China,1911,0
+Cuba,1912,1
+Ecuador,1912,1
+Ecuador,1913,1
+Ecuador,1914,1
+China,1913,1
+China,1914,1
+United States,1915,1
+United States,1916,1
+United States,1917,1
+Mexico,1914,1
+Mexico,1915,1
+Mexico,1916,1
+Mexico,1917,1
+Mexico,1918,1
+Mexico,1919,1
+Mexico,1920,1
+China,1916,1
+China,1917,1
+China,1918,1
+Russia,1916,1
+Russia,1917,1
+Finland,1919,0
+Japan,1918,0
+Japan,1919,0
+Japan,1920,0
+USSR,1917,1
+USSR,1918,1
+USSR,1919,1
+USSR,1920,1
+USSR,1921,1
+United Kingdom,1918,0
+United Kingdom,1919,0
+United Kingdom,1920,0
+United States of America,1918,0
+United States of America,1919,0
+United States of America,1920,0
+France,1918,0
+France,1919,0
+Germany,1918,1
+USSR,1918,0
+Finland,1918,1
+Hungary,1919,0
+Hungary,1920,0
+USSR,1920,1
+USSR,1921,1
+USSR,1920,0
+USSR,1921,0
+Iran,1920,1
+Iran,1921,1
+USSR,1921,1
+USSR,1921,1
+USSR,1922,1
+USSR,1923,1
+Bulgaria,1923,1
+Mexico,1923,1
+Mexico,1924,1
+Honduras,1924,0
+Afghanistan,1924,1
+Afghanistan,1925,1
+War Lord Gov't.,1926,0
+War Lord Gov't.,1927,0
+War Lord Gov't.,1928,0
+Japan,1927,1
+Japan,1928,1
+Mexico,1926,0
+Mexico,1927,0
+Mexico,1928,0
+Mexico,1929,0
+Ethiopia,1928,1
+Ethiopia,1929,1
+Ethiopia,1930,1
+China,1928,1
+China,1929,1
+China,1930,1
+Afghanistan,1928,1
+Afghanistan,1929,1
+China,1929,1
+China,1930,1
+Mexico,1929,1
+Saudi Arabia,1929,1
+Saudi Arabia,1930,1
+China,1930,0
+China,1931,0
+China,1932,0
+China,1933,0
+China,1934,0
+China,1935,0
+China,1936,0
+USSR,1934,1
+China,1931,1
+China,1932,1
+China,1933,1
+China,1934,1
+El Salvador,1932,1
+Peru,1932,1
+Brazil,1932,1
+China,1934,1
+Spain,1934,1
+Spain,1936,0
+Spain,1937,0
+Spain,1938,0
+Spain,1939,0
+Portugal,1936,1
+Portugal,1937,1
+Portugal,1938,1
+Portugal,1939,1
+Germany,1936,1
+Germany,1937,1
+Germany,1938,1
+Germany,1939,1
+Italy,1936,1
+Italy,1937,1
+Italy,1938,1
+Italy,1939,1
+United Kingdom,1944,1
+United Kingdom,1945,1
+Greece,1944,1
+Greece,1945,1
+Poland,1945,1
+Poland,1946,1
+Poland,1947,1
+USSR,1945,1
+USSR,1946,1
+USSR,1947,1
+USSR,1945,1
+USSR,1946,1
+USSR,1947,1
+USSR,1945,1
+USSR,1946,1
+USSR,1947,1
+USSR,1948,1
+USSR,1949,1
+USSR,1950,1
+USSR,1951,1
+China,1946,0
+China,1947,0
+China,1948,0
+China,1949,0
+China,1950,0
+China,1947,1
+Paraguay,1947,1
+Yemen,1948,1
+Costa Rica,1948,0
+Colombia,1948,1
+Colombia,1949,1
+Colombia,1950,1
+Colombia,1951,1
+Colombia,1952,1
+Colombia,1953,1
+Colombia,1954,1
+Colombia,1955,1
+Colombia,1956,1
+Colombia,1957,1
+Colombia,1958,1
+Burma,1948,1
+Burma,1949,1
+Burma,1950,1
+Burma,1951,1
+Indonesia,1950,1
+Philippines,1950,1
+Philippines,1951,1
+Philippines,1952,1
+Philippines,1953,1
+Philippines,1954,1
+Bolivia,1952,0
+Indonesia,1953,1
+Argentina,1955,0
+China,1956,1
+China,1957,1
+China,1958,1
+China,1959,1
+Indonesia,1956,1
+Indonesia,1957,1
+Indonesia,1958,1
+Indonesia,1959,1
+Indonesia,1960,1
+Indonesia,1961,1
+Indonesia,1962,1
+United States of America,1958,1
+Lebanon,1958,1
+Cuba,1958,0
+Cuba,1959,0
+Burma,1958,0
+Burma,1959,0
+Burma,1960,0
+Iraq,1959,1
+United States of America,1961,0
+United States of America,1962,0
+United States of America,1963,0
+United States of America,1964,0
+United States of America,1965,0
+"Vietnam, Republic of",1960,0
+"Vietnam, Republic of",1961,0
+"Vietnam, Republic of",1962,0
+"Vietnam, Republic of",1963,0
+"Vietnam, Republic of",1964,0
+"Vietnam, Republic of",1965,0
+Belgium,1960,0
+Zaire,1960,1
+Zaire,1961,1
+Zaire,1962,1
+Zaire,1963,1
+"Vietnam, Democratic Rep.",1961,1
+"Vietnam, Democratic Rep.",1962,1
+Laos,1960,0
+Laos,1961,0
+Laos,1962,0
+Iraq,1961,0
+Iraq,1962,0
+Iraq,1963,0
+Algeria,1962,0
+Algeria,1963,0
+Egypt/United Arab Republic,1962,1
+Egypt/United Arab Republic,1963,1
+Egypt/United Arab Republic,1964,1
+Egypt/United Arab Republic,1965,1
+Egypt/United Arab Republic,1966,1
+Egypt/United Arab Republic,1967,1
+Yemen Arab Republic,1962,1
+Yemen Arab Republic,1963,1
+Yemen Arab Republic,1964,1
+Yemen Arab Republic,1965,1
+Yemen Arab Republic,1966,1
+Yemen Arab Republic,1967,1
+Yemen Arab Republic,1968,1
+Yemen Arab Republic,1969,1
+United States of America,1964,0
+United States of America,1965,0
+United States of America,1966,0
+United States of America,1967,0
+United States of America,1968,0
+Laos,1963,0
+Laos,1964,0
+Laos,1965,0
+Laos,1966,0
+Laos,1967,0
+Laos,1968,0
+"Vietnam, Democratic Rep.",1963,1
+"Vietnam, Democratic Rep.",1964,1
+"Vietnam, Democratic Rep.",1965,1
+"Vietnam, Democratic Rep.",1966,1
+"Vietnam, Democratic Rep.",1967,1
+"Vietnam, Democratic Rep.",1968,1
+Somalia,1963,0
+Somalia,1964,0
+Ethiopia,1963,1
+Ethiopia,1964,1
+Sudan,1963,0
+Sudan,1964,0
+Sudan,1965,0
+Sudan,1966,0
+Sudan,1967,0
+Sudan,1968,0
+Sudan,1969,0
+Sudan,1970,0
+Sudan,1971,0
+Sudan,1972,0
+Congo,1963,1
+Congo,1964,1
+Congo,1965,1
+Rwanda,1963,1
+Rwanda,1964,1
+Belgium,1964,1
+Belgium,1965,1
+Congo,1964,1
+Congo,1965,1
+Zanzibar,1964,0
+Iraq,1965,0
+Iraq,1966,0
+United States of America,1965,0
+Dominican Republic,1965,0
+Indonesia,1965,0
+Indonesia,1966,0
+Indonesia,1967,0
+Indonesia,1968,0
+Indonesia,1969,0
+Uganda,1966,1
+United States,1966,1
+United States,1967,1
+United States,1968,1
+Guatemala,1966,1
+Guatemala,1967,1
+Guatemala,1968,1
+France,1968,1
+France,1969,1
+France,1970,1
+France,1971,1
+Chad,1966,1
+Chad,1967,1
+Chad,1968,1
+Chad,1969,1
+Chad,1970,1
+Chad,1971,1
+Burma,1967,0
+Burma,1968,0
+Burma,1969,0
+Burma,1970,0
+Burma,1971,0
+Burma,1972,0
+Burma,1973,0
+Burma,1974,0
+Burma,1975,0
+Burma,1976,0
+Burma,1977,0
+Burma,1978,0
+Burma,1979,0
+Burma,1980,0
+Nigeria,1967,1
+Nigeria,1968,1
+Nigeria,1969,1
+Nigeria,1970,1
+China,1967,1
+China,1968,1
+Iraq,1969,0
+Iraq,1970,0
+India,1970,1
+India,1971,1
+Syria,1970,0
+Jordan,1970,1
+Guatemala,1970,1
+Guatemala,1971,1
+Pakistan,1971,0
+Sri Lanka,1971,1
+United States of America,1971,0
+United States of America,1972,0
+United States of America,1973,0
+Cambodia,1971,0
+Cambodia,1972,0
+Cambodia,1973,0
+Cambodia,1974,0
+Cambodia,1975,0
+Philippines,1972,1
+Philippines,1973,1
+Philippines,1974,1
+Philippines,1975,1
+Philippines,1976,1
+Philippines,1977,1
+Philippines,1978,1
+Philippines,1979,1
+Philippines,1980,1
+Philippines,1981,1
+Thailand,1972,0
+Thailand,1973,0
+Burundi,1972,1
+Philippines,1972,0
+Philippines,1973,0
+Philippines,1974,0
+Philippines,1975,0
+Philippines,1976,0
+Philippines,1977,0
+Philippines,1978,0
+Philippines,1979,0
+Philippines,1980,0
+Philippines,1981,0
+Philippines,1982,0
+Philippines,1983,0
+Philippines,1984,0
+Philippines,1985,0
+Philippines,1986,0
+Philippines,1987,0
+Philippines,1988,0
+Philippines,1989,0
+Philippines,1990,0
+Philippines,1991,0
+Philippines,1992,0
+Rhodesia,1972,0
+Rhodesia,1973,0
+Rhodesia,1974,0
+Rhodesia,1975,0
+Rhodesia,1976,0
+Rhodesia,1977,0
+Rhodesia,1978,0
+Rhodesia,1979,0
+Pakistan,1973,1
+Pakistan,1974,1
+Pakistan,1975,1
+Pakistan,1976,1
+Pakistan,1977,1
+Chile,1973,0
+United Kingdom,1973,1
+United Kingdom,1974,1
+United Kingdom,1975,1
+Iran,1973,1
+Iran,1974,1
+Iran,1975,1
+Oman,1973,1
+Oman,1974,1
+Oman,1975,1
+Iran,1974,0
+Iran,1975,0
+Iraq,1974,1
+Iraq,1975,1
+Cuba,1976,1
+Cuba,1977,1
+Cuba,1978,1
+Ethiopia,1975,1
+Ethiopia,1976,1
+Ethiopia,1977,1
+Ethiopia,1978,1
+Argentina,1975,1
+Argentina,1976,1
+Argentina,1977,1
+Maronite militias,1975,0
+Maronite militias,1976,0
+Syria,1976,0
+Indonesia,1976,0
+Indonesia,1977,0
+Indonesia,1978,0
+Laos,1976,1
+Hmong,1976,0
+Laos,1977,1
+Hmong,1977,0
+Laos,1978,1
+Hmong,1978,0
+Laos,1979,1
+Hmong,1979,0
+Vietnam,1976,1
+Vietnam,1977,1
+Vietnam,1978,1
+Vietnam,1979,1
+Cuba,1976,0
+Cuba,1977,0
+Cuba,1978,0
+Cuba,1979,0
+Cuba,1980,0
+Cuba,1981,0
+Cuba,1982,0
+Cuba,1983,0
+Cuba,1984,0
+Cuba,1985,0
+Cuba,1986,0
+Cuba,1987,0
+Cuba,1988,0
+Cuba,1989,0
+Cuba,1990,0
+Cuba,1991,0
+Angola,1976,0
+Angola,1977,0
+Angola,1978,0
+Angola,1979,0
+Angola,1980,0
+Angola,1981,0
+Angola,1982,0
+Angola,1983,0
+Angola,1984,0
+Angola,1985,0
+Angola,1986,0
+Angola,1987,0
+Angola,1988,0
+Angola,1989,0
+Angola,1990,0
+Angola,1991,0
+South Africa,1976,1
+South Africa,1977,1
+South Africa,1978,1
+South Africa,1979,1
+South Africa,1980,1
+South Africa,1981,1
+South Africa,1982,1
+South Africa,1983,1
+South Africa,1984,1
+South Africa,1985,1
+South Africa,1986,1
+South Africa,1987,1
+South Africa,1988,1
+South Africa,1989,1
+Cuba,1976,0
+Cuba,1977,0
+Somalia,1976,1
+Somalia,1977,1
+Ethiopia,1976,0
+Ethiopia,1977,0
+Indonesia,1976,1
+Indonesia,1977,1
+Indonesia,1978,1
+Indonesia,1979,1
+Lebanese Forces,1978,0
+Syria,1978,1
+Israel,1978,0
+Cuba,1978,1
+Cuba,1979,1
+Cuba,1980,1
+Ethiopia,1978,1
+Ethiopia,1979,1
+Ethiopia,1980,1
+Somalia,1980,0
+Guatemala,1978,1
+Guatemala,1979,1
+Guatemala,1980,1
+Guatemala,1981,1
+Guatemala,1982,1
+Guatemala,1983,1
+Guatemala,1984,1
+Afghanistan,1978,0
+Belgium,1978,1
+France,1978,1
+DRC,1978,1
+Russia,1979,0
+Russia,1980,0
+Afghanistan,1978,0
+Afghanistan,1979,0
+Afghanistan,1980,0
+Iran,1978,0
+Iran,1979,0
+Nicaragua,1978,0
+Nicaragua,1979,0
+Iran,1979,1
+Iran,1980,1
+Iran,1981,1
+Iran,1982,1
+Iran,1983,1
+Iran,1984,1
+El Salvador,1979,0
+El Salvador,1980,0
+El Salvador,1981,0
+El Salvador,1982,0
+El Salvador,1983,0
+El Salvador,1984,0
+El Salvador,1985,0
+El Salvador,1986,0
+El Salvador,1987,0
+El Salvador,1988,0
+El Salvador,1989,0
+El Salvador,1990,0
+El Salvador,1991,0
+El Salvador,1992,0
+Tanzania,1985,1
+Tanzania,1986,1
+Tanzania,1987,1
+Tanzania,1988,1
+Tanzania,1989,1
+Tanzania,1990,1
+Tanzania,1991,1
+Tanzania,1992,1
+Mozambique,1979,1
+Mozambique,1980,1
+Mozambique,1981,1
+Mozambique,1982,1
+Mozambique,1983,1
+Mozambique,1984,1
+Mozambique,1985,1
+Mozambique,1986,1
+Mozambique,1987,1
+Mozambique,1988,1
+Mozambique,1989,1
+Mozambique,1990,1
+Mozambique,1991,1
+Mozambique,1992,1
+Zimbabwe,1982,1
+Zimbabwe,1983,1
+Zimbabwe,1984,1
+Zimbabwe,1985,1
+Zimbabwe,1986,1
+Zimbabwe,1987,1
+Zimbabwe,1988,1
+Zimbabwe,1989,1
+Zimbabwe,1990,1
+Zimbabwe,1991,1
+Zimbabwe,1992,1
+France,1983,1
+France,1984,1
+Chad,1980,0
+Chad,1981,0
+Chad,1982,0
+Chad,1983,0
+Chad,1984,0
+Libya,1980,0
+Libya,1981,0
+Uganda,1980,0
+Uganda,1981,0
+Uganda,1982,0
+Uganda,1983,0
+Uganda,1984,0
+Uganda,1985,0
+Uganda,1986,0
+Nigeria,1980,1
+Nigeria,1981,1
+Syria,1981,1
+Syria,1982,1
+Ethiopia,1982,0
+Ethiopia,1983,0
+Ethiopia,1984,0
+Ethiopia,1985,0
+Ethiopia,1986,0
+Ethiopia,1987,0
+Ethiopia,1988,0
+Ethiopia,1989,0
+Ethiopia,1990,0
+Ethiopia,1991,0
+Peru,1982,1
+Peru,1983,1
+Peru,1984,1
+Peru,1985,1
+Peru,1986,1
+Peru,1987,1
+Peru,1988,1
+Peru,1989,1
+Peru,1990,1
+Peru,1991,1
+Peru,1992,1
+Nicaragua,1982,0
+Nicaragua,1983,0
+Nicaragua,1984,0
+Nicaragua,1985,0
+Nicaragua,1986,0
+Nicaragua,1987,0
+Nicaragua,1988,0
+Nicaragua,1989,0
+Nicaragua,1990,0
+Zimbabwe,1983,1
+Zimbabwe,1984,1
+Zimbabwe,1985,1
+Zimbabwe,1986,1
+Zimbabwe,1987,1
+Burma,1983,1
+Burma,1984,1
+Burma,1985,1
+Burma,1986,1
+Burma,1987,1
+Burma,1988,1
+United States,1983,0
+United States,1984,0
+France,1983,0
+France,1984,0
+Lebanon,1983,0
+Lebanon,1984,0
+India,1987,0
+India,1988,0
+India,1989,0
+India,1990,0
+Sri Lanka,1983,0
+Sri Lanka,1984,0
+Sri Lanka,1985,0
+Sri Lanka,1986,0
+Sri Lanka,1987,0
+Sri Lanka,1988,0
+Sri Lanka,1989,0
+Sri Lanka,1990,0
+Sri Lanka,1991,0
+Sri Lanka,1992,0
+Sri Lanka,1993,0
+Sri Lanka,1994,0
+Sri Lanka,1995,0
+Sri Lanka,1996,0
+Sri Lanka,1997,0
+Sri Lanka,1998,0
+Sri Lanka,1999,0
+Sri Lanka,2000,0
+Sri Lanka,2001,0
+Sri Lanka,2002,0
+Sudan,1983,0
+Sudan,1984,0
+Sudan,1985,0
+Sudan,1986,0
+Sudan,1987,0
+Sudan,1988,0
+Sudan,1989,0
+Sudan,1990,0
+Sudan,1991,0
+India,1984,0
+Turkey,1984,0
+Turkey,1985,0
+Turkey,1986,0
+Iran,1985,0
+Iran,1986,0
+Iran,1987,0
+Iran,1988,0
+Iraq,1985,1
+Iraq,1986,1
+Iraq,1987,1
+Iraq,1988,1
+Yemen People's Republic,1986,0
+Uganda,1986,1
+Uganda,1987,1
+Sri Lanka,1987,1
+Sri Lanka,1988,1
+Sri Lanka,1989,1
+Burma,1988,1
+Somalia,1988,0
+Somalia,1989,0
+Somalia,1990,0
+Somalia,1991,0
+Syria,1989,1
+Syria,1990,1
+Lebanon,1989,0
+Lebanon,1990,0
+Afghanistan,1989,0
+Afghanistan,1990,0
+Afghanistan,1991,0
+Afghanistan,1992,0
+Afghanistan,1993,0
+Afghanistan,1994,0
+Afghanistan,1995,0
+Afghanistan,1996,0
+Afghanistan,1997,0
+Afghanistan,1998,0
+Afghanistan,1999,0
+Afghanistan,2000,0
+Afghanistan,2001,0
+Chad,1989,0
+Chad,1990,0
+Indonesia,1989,1
+Indonesia,1990,1
+Indonesia,1991,1
+Papua New Guinea,1989,0
+Papua New Guinea,1990,0
+Papua New Guinea,1991,0
+Papua New Guinea,1992,0
+Cambodia,1989,0
+Cambodia,1990,0
+Cambodia,1991,0
+Romania,1989,0
+Liberia,1989,0
+Liberia,1990,0
+Nigeria,1990,0
+India,1990,0
+India,1991,0
+India,1992,0
+India,1993,0
+India,1994,0
+India,1995,0
+India,1996,0
+India,1997,0
+India,1998,0
+India,1999,0
+India,2000,0
+India,2001,0
+India,2002,0
+India,2003,0
+India,2004,0
+India,2005,0
+Iraq,1991,1
+Sierra Leone,1991,1
+Sierra Leone,1992,1
+Sierra Leone,1993,1
+Sierra Leone,1994,1
+Sierra Leone,1995,1
+Sierra Leone,1996,1
+Yugoslavia/Serbia,1991,0
+Croatia,1991,1
+Yugoslavia/Serbia,1992,0
+Croatia,1992,1
+Turkey,1991,0
+Turkey,1992,0
+Turkey,1993,0
+Turkey,1994,0
+Turkey,1995,0
+Turkey,1996,0
+Turkey,1997,0
+Turkey,1998,0
+Turkey,1999,0
+Nigeria,1992,0
+Nigeria,1993,0
+Nigeria,1994,0
+Nigeria,1995,0
+Somalia,1991,0
+Somalia,1992,0
+Somalia,1993,0
+Somalia,1994,0
+Somalia,1995,0
+Somalia,1996,0
+Somalia,1997,0
+Pakistan,1992,0
+Pakistan,1993,0
+Pakistan,1994,0
+Pakistan,1995,0
+Australia,1992,0
+Australia,1993,0
+Australia,1994,0
+Australia,1995,0
+France,1992,0
+France,1993,0
+France,1994,0
+France,1995,0
+United States of America,1992,0
+United States of America,1993,0
+United States of America,1994,0
+Italy,1992,0
+Italy,1993,0
+Italy,1994,0
+Italy,1995,0
+Georgia,1991,0
+Georgia,1992,0
+Armenia,1991,1
+Armenia,1992,1
+Armenia,1993,1
+Azerbaijan,1991,0
+Azerbaijan,1992,0
+Azerbaijan,1993,0
+Moldova,1991,0
+Moldova,1992,0
+Algeria,1992,0
+Algeria,1993,0
+Algeria,1994,0
+Algeria,1995,0
+Algeria,1996,0
+Algeria,1997,0
+Algeria,1998,0
+Algeria,1999,0
+Russia,1993,0
+Russia,1994,0
+Russia,1995,0
+Russia,1996,0
+Russia,1997,0
+Tadzhikistan,1992,0
+Tadzhikistan,1993,0
+Tadzhikistan,1994,0
+Tadzhikistan,1995,0
+Tadzhikistan,1996,0
+Tadzhikistan,1997,0
+Bosnia,1992,1
+Bosnia,1993,1
+Bosnia,1994,1
+United States,1995,1
+Croatia,1994,0
+Croatia,1992,1
+Croatia,1993,1
+Croatia,1994,1
+Liberia,1992,0
+Liberia,1993,0
+Liberia,1994,0
+Liberia,1995,0
+Nigeria,1992,0
+Angola,1992,0
+Angola,1993,0
+Angola,1994,0
+Cambodia,1993,1
+Cambodia,1994,1
+Cambodia,1995,1
+Cambodia,1996,1
+Cambodia,1997,1
+Georgia,1993,0
+Georgia,1994,0
+Burundi,1993,0
+Burundi,1994,0
+Burundi,1995,0
+Burundi,1996,0
+Burundi,1997,0
+Burundi,1998,0
+Yemen,1994,1
+Rwanda,1994,0
+Russia,1994,0
+Russia,1995,0
+Russia,1996,0
+Croatia,1995,1
+Liberia,1996,0
+Iraq,1996,0
+Uganda,1997,1
+Rwanda,1997,1
+Angola,1997,1
+DRC,1996,0
+DRC,1997,0
+Rwanda,1997,1
+Rwanda,1998,1
+Angola,1997,1
+Congo,1997,0
+Sierra Leone,1998,0
+Sierra Leone,1999,0
+Ghana,1998,1
+Ghana,1999,1
+Nigeria,1998,1
+Nigeria,1999,1
+Guinea,1998,1
+Guinea,1999,1
+United Kingdom,2000,1
+Yugoslavia,1998,0
+Yugoslavia,1999,0
+Guinea,1998,0
+Guinea-Bissau,1998,0
+Guinea-Bissau,1999,0
+Senegal,1998,0
+Angola,1998,0
+Angola,1999,0
+Angola,2000,0
+Angola,2001,0
+Angola,2002,0
+Sudan,1998,0
+Sudan,1999,0
+Sudan,2000,0
+Sudan,2001,0
+Sudan,2002,0
+Namibia,1998,0
+Namibia,1999,0
+Namibia,2000,0
+Namibia,2001,0
+Zimbabwe,1998,0
+Zimbabwe,1999,0
+Zimbabwe,2000,0
+Zimbabwe,2001,0
+Zimbabwe,2002,0
+Rwanda,1998,1
+Rwanda,1999,1
+Rwanda,2000,1
+Rwanda,2001,1
+Rwanda,2002,1
+Burundi,1998,1
+Burundi,1999,1
+Burundi,2000,1
+Burundi,2001,1
+Burundi,2002,1
+Uganda,1998,1
+Uganda,1999,1
+Uganda,2000,1
+Uganda,2001,1
+Uganda,2002,1
+Chad,1998,0
+Chad,1999,0
+Democratic Republic of Congo,1998,0
+Democratic Republic of Congo,1999,0
+Democratic Republic of Congo,2000,0
+Democratic Republic of Congo,2001,0
+Democratic Republic of Congo,2002,0
+Chad,1998,0
+Chad,1999,0
+Chad,2000,0
+Angola,1998,1
+Angola,1999,1
+Angola,2000,1
+Angola,2001,1
+Angola,2002,1
+Congo (Brazzaville),1998,1
+Congo (Brazzaville),1999,1
+Indonesia,1999,0
+Indonesia,2000,0
+Indonesia,2001,0
+Indonesia,2002,0
+Ethiopia,1999,1
+Russia,1999,1
+Russia,2000,1
+Russia,2001,1
+Russia,2002,1
+Russia,2003,1
+Philippines,2000,0
+Philippines,2001,0
+Guinea ,2000,0
+Guinea ,2001,0
+Burundi,2001,0
+Burundi,2002,0
+Burundi,2003,0
+Rwanda,2001,1
+Nepal ,2001,0
+Nepal ,2002,0
+Nepal ,2003,0
+Liberia,2002,0
+Liberia,2003,0
+Anyuaa,2002,0
+Anyuaa,2003,0
+France,2002,0
+France,2003,0
+France,2004,0
+Cote d'Ivoire,2002,0
+Cote d'Ivoire,2003,0
+Cote d'Ivoire,2004,0
+Phillippines,2003,0
+Sudan,2003,0
+Sudan,2004,0
+Sudan,2005,0
+Sudan,2006,0
+Indonesia,2003,1
+Nepal,2003,0
+Nepal,2004,0
+Nepal,2005,0
+Nepal,2006,0
+United States,2004,0
+United States,2005,0
+United States,2006,0
+Pakistan,2004,0
+Pakistan,2005,0
+Pakistan,2006,0
+Christian Tarok,2004,0
+Yemen,2004,1
+Yemen,2005,1
+Phillippines,2005,0
+Phillippines,2006,0
+Chad,2005,1
+Chad,2006,1
+United States,2007,1
+Somalia,2006,1
+Somalia,2007,1
+Somalia,2008,1
+Ethiopia,2006,1
+Ethiopia,2007,1
+Ethiopia,2008,1
+Eritrea,2006,0
+Eritrea,2007,0
+Eritrea,2008,0
+Sri Lanka,2006,0
+Sri Lanka,2007,0
+Sri Lanka,2008,0
+Sri Lanka,2009,0
+Yemen,2007,0
