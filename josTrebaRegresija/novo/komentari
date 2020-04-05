@@ -1,0 +1,13 @@
+internet_users_filtered => mislim da je ovo ok brojka, 90ih mozda stvarno nije bilo interneta tako u nekim zemljama
+
+
+employers_percentage => mislim da ima premalo vrednosti, ali cu
+potpuniti kod
+
+
+school_enrollment => ima previse kolona i koliko vidim mnogo null vrednosti, proveriti koliko % su null vrednosti 
+
+
+schooling,uneployment => uradicu regresiju, ali proveriti koliko ima null vrednosti
+
+sss
