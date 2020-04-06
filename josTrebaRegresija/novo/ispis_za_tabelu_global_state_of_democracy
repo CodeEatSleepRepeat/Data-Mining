@@ -1,0 +1,1893 @@
+/home/sale/anaconda3/bin/python /home/sale/Desktop/GitHubSIAP/Data-Mining/SIAP_algoritmi/filling_data_sets.py
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.0649324288109836
+R2 ERROR: 
+0.01640516449345264
+Number of NaNs: 11
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.06497719653032746
+R2 ERROR: 
+0.016388058224263702
+Number of NaNs: 11
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.06489148081017068
+R2 ERROR: 
+0.01642129549737703
+Number of NaNs: 11
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.07508878133494472
+R2 ERROR: 
+0.012939025164287687
+Number of NaNs: 11
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.07509781909389127
+R2 ERROR: 
+0.012959466798386776
+Number of NaNs: 11
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.07508141456348724
+R2 ERROR: 
+0.012918150054679223
+Number of NaNs: 11
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.07233829358471071
+R2 ERROR: 
+0.03189941446760869
+Number of NaNs: 11
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.04213219334122845
+R2 ERROR: 
+0.010803127370660137
+Number of NaNs: 0
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.04190556533442696
+R2 ERROR: 
+0.01118142356682672
+Number of NaNs: 0
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.04242593543315189
+R2 ERROR: 
+0.010415314584980018
+Number of NaNs: 0
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.16110679120301866
+R2 ERROR: 
+0.02785706281343281
+Number of NaNs: 0
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.074830289947911
+R2 ERROR: 
+0.01876389057014627
+Number of NaNs: 0
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.11983218215607101
+R2 ERROR: 
+0.015251524950989359
+Number of NaNs: 0
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.036012535009451306
+R2 ERROR: 
+0.00326732386367401
+Number of NaNs: 15
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.036017734805487624
+R2 ERROR: 
+0.0032788749063787925
+Number of NaNs: 15
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.03600974126698242
+R2 ERROR: 
+0.0032555503406651587
+Number of NaNs: 15
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.03544118006054977
+R2 ERROR: 
+-0.0012449632747100203
+Number of NaNs: 15
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.03544393321121683
+R2 ERROR: 
+-0.0012479439932917558
+Number of NaNs: 15
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.035439335621698126
+R2 ERROR: 
+-0.0012419868352850916
+Number of NaNs: 15
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.045761248255634726
+R2 ERROR: 
+0.00336933062943634
+Number of NaNs: 0
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.045767897814373806
+R2 ERROR: 
+0.003338958202693032
+Number of NaNs: 0
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.04575551652964066
+R2 ERROR: 
+0.0033994971088953108
+Number of NaNs: 0
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.04863182507017846
+R2 ERROR: 
+0.0029420690535842953
+Number of NaNs: 0
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.04863492933222969
+R2 ERROR: 
+0.0029196116357761426
+Number of NaNs: 0
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.04862980386917691
+R2 ERROR: 
+0.0029644118614846615
+Number of NaNs: 0
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.05241243527731529
+R2 ERROR: 
+0.0043293024606883
+Number of NaNs: 0
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.05235886422071772
+R2 ERROR: 
+0.004340094591432031
+Number of NaNs: 0
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.05246886206264493
+R2 ERROR: 
+0.004318200687935758
+Number of NaNs: 0
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.038930969736636914
+R2 ERROR: 
+-0.002774866452656788
+Number of NaNs: 0
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.03889455443658939
+R2 ERROR: 
+-0.0027720825261463578
+Number of NaNs: 0
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.03897049720923219
+R2 ERROR: 
+-0.0027775355081332
+Number of NaNs: 0
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.02662747765323027
+R2 ERROR: 
+0.005433485119734183
+Number of NaNs: 0
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.026614814423065253
+R2 ERROR: 
+0.005432836610411829
+Number of NaNs: 0
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.026642170585964804
+R2 ERROR: 
+0.005433664706454122
+Number of NaNs: 0
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.03356185768749484
+R2 ERROR: 
+0.003718653865829813
+Number of NaNs: 0
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.03327680692038682
+R2 ERROR: 
+0.004050353886538849
+Number of NaNs: 0
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.033932880031214675
+R2 ERROR: 
+0.00339357607007984
+Number of NaNs: 0
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.03175926620149985
+R2 ERROR: 
+0.02964885598224032
+Number of NaNs: 0
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.031709803423477845
+R2 ERROR: 
+0.029767684418561924
+Number of NaNs: 0
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.03181437878495854
+R2 ERROR: 
+0.029524944786669116
+Number of NaNs: 0
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.0311080077495322
+R2 ERROR: 
+-0.0018647404536322743
+Number of NaNs: 0
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.031163610536126624
+R2 ERROR: 
+-0.0017913389285264536
+Number of NaNs: 0
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.031132931922099864
+R2 ERROR: 
+-0.0019116925082647285
+Number of NaNs: 0
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.03466597284426285
+R2 ERROR: 
+0.05876923887145602
+Number of NaNs: 0
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.033902442847240144
+R2 ERROR: 
+0.058830346072342166
+Number of NaNs: 0
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.03551138120335526
+R2 ERROR: 
+0.058587254314746984
+Number of NaNs: 0
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.02850193113213162
+R2 ERROR: 
+0.041494341912220456
+Number of NaNs: 0
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.028688275343827604
+R2 ERROR: 
+0.04233365838370362
+Number of NaNs: 0
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.02842106081739328
+R2 ERROR: 
+0.04050645011286591
+Number of NaNs: 0
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.04447753200928893
+R2 ERROR: 
+0.0029265082009424237
+Number of NaNs: 0
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.044396105290906825
+R2 ERROR: 
+0.0029666954113459765
+Number of NaNs: 0
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.04456429571602093
+R2 ERROR: 
+0.002885904343634449
+Number of NaNs: 0
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.04082514269148429
+R2 ERROR: 
+0.009668468072926761
+Number of NaNs: 0
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.04174679744441137
+R2 ERROR: 
+0.010890959385508547
+Number of NaNs: 0
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.04003782004918235
+R2 ERROR: 
+0.00844606419413263
+Number of NaNs: 0
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.04320815193361301
+R2 ERROR: 
+-0.0012374555725507275
+Number of NaNs: 0
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.04340846186292325
+R2 ERROR: 
+-0.001199664450408866
+Number of NaNs: 0
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.0431295886738852
+R2 ERROR: 
+-0.0012693645169516987
+Number of NaNs: 0
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.0498751935355002
+R2 ERROR: 
+0.0027778480749656165
+Number of NaNs: 0
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.04989077872765391
+R2 ERROR: 
+0.0027375495023266305
+Number of NaNs: 0
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.04986123799510665
+R2 ERROR: 
+0.0028178308059704227
+Number of NaNs: 0
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.04412225110451433
+R2 ERROR: 
+-0.002883547497404493
+Number of NaNs: 0
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.04664120612331514
+R2 ERROR: 
+-0.002804033840507758
+Number of NaNs: 0
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.04242926924247354
+R2 ERROR: 
+-0.0028520091832391348
+Number of NaNs: 0
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.043121736540883845
+R2 ERROR: 
+-0.002417098293557185
+Number of NaNs: 0
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.043100637971205356
+R2 ERROR: 
+-0.002543491826604738
+Number of NaNs: 0
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.04321234874013496
+R2 ERROR: 
+-0.0022790844091886697
+Number of NaNs: 0
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.044131276033515104
+R2 ERROR: 
+-0.0023757424787742565
+Number of NaNs: 0
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.04398884929221644
+R2 ERROR: 
+-0.002201749826369781
+Number of NaNs: 0
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.04438000564717513
+R2 ERROR: 
+-0.0025409088690016013
+Number of NaNs: 0
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.0423845254629155
+R2 ERROR: 
+0.005531900608370055
+Number of NaNs: 0
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.04232112655931431
+R2 ERROR: 
+0.005582446556305243
+Number of NaNs: 0
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.04245240194350551
+R2 ERROR: 
+0.005480736089894744
+Number of NaNs: 0
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.06137624181829904
+R2 ERROR: 
+0.004654758185984931
+Number of NaNs: 236
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.020526485859671033
+R2 ERROR: 
+0.007894147369189808
+Number of NaNs: 7
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.10692037088153164
+R2 ERROR: 
+0.009848094421611275
+Number of NaNs: 40
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.07564010028252054
+R2 ERROR: 
+0.014963208625288549
+Number of NaNs: 112
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.05890195154752056
+R2 ERROR: 
+0.017103862303649908
+Number of NaNs: 112
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.06952692435462343
+R2 ERROR: 
+0.0008231447652485846
+Number of NaNs: 123
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.057452814976835236
+R2 ERROR: 
+0.012485250805390091
+Number of NaNs: 123
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.0777683822121504
+R2 ERROR: 
+0.010342461355345445
+Number of NaNs: 123
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.24354395269965534
+R2 ERROR: 
+0.0019354353671231506
+Number of NaNs: 112
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.08861818995058829
+R2 ERROR: 
+0.04431081446104401
+Number of NaNs: 112
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.06520008619569417
+R2 ERROR: 
+0.019919594259568463
+Number of NaNs: 123
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.07354982059606528
+R2 ERROR: 
+0.004464270144008298
+Number of NaNs: 112
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.07423947516289953
+R2 ERROR: 
+0.0043033413788921004
+Number of NaNs: 112
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.07053369624997384
+R2 ERROR: 
+0.0022396549050466286
+Number of NaNs: 225
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.0927901052221647
+R2 ERROR: 
+0.031514184785379484
+Number of NaNs: 123
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.0729956199705509
+R2 ERROR: 
+0.00689272371434424
+Number of NaNs: 320
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.14845224703920407
+R2 ERROR: 
+0.04524391680503337
+Number of NaNs: 112
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.1239633535721528
+R2 ERROR: 
+0.04698723547527528
+Number of NaNs: 112
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.21143342261319578
+R2 ERROR: 
+0.008400164054947257
+Number of NaNs: 320
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.14119450058500607
+R2 ERROR: 
+0.0187310593684602
+Number of NaNs: 320
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.1255938510709321
+R2 ERROR: 
+0.04552421441193122
+Number of NaNs: 113
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.03144873652486078
+R2 ERROR: 
+-0.003212539160229122
+Number of NaNs: 112
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.03359657418902349
+R2 ERROR: 
+-0.001466517429362435
+Number of NaNs: 112
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.0488354159769809
+R2 ERROR: 
+-0.0014855035644485426
+Number of NaNs: 127
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.03388066291972428
+R2 ERROR: 
+0.005890250108912087
+Number of NaNs: 112
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.2135352276313997
+R2 ERROR: 
+0.0014322867039801013
+Number of NaNs: 112
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.0556890861392072
+R2 ERROR: 
+0.001972238727051545
+Number of NaNs: 112
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.041542662379042555
+R2 ERROR: 
+0.0009017806579247889
+Number of NaNs: 112
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.04560577263882776
+R2 ERROR: 
+-0.0037971936443024212
+Number of NaNs: 112
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.04222270615504987
+R2 ERROR: 
+0.0037754295641173607
+Number of NaNs: 112
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.03851715830137369
+R2 ERROR: 
+0.009150165903275664
+Number of NaNs: 112
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.044736047869741405
+R2 ERROR: 
+-0.0030210916492501294
+Number of NaNs: 112
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.088225545113448
+R2 ERROR: 
+-0.00042765474628869704
+Number of NaNs: 112
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.04439353107339222
+R2 ERROR: 
+0.005816517248366293
+Number of NaNs: 112
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.043342511520183785
+R2 ERROR: 
+0.0029889078936086166
+Number of NaNs: 112
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.23212100203092303
+R2 ERROR: 
+-0.0008886527940419331
+Number of NaNs: 112
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.04309099171900382
+R2 ERROR: 
+-0.0036412207782690054
+Number of NaNs: 112
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.03470919966087124
+R2 ERROR: 
+0.0009483030734929176
+Number of NaNs: 112
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.15833436444009727
+R2 ERROR: 
+0.019645343013808714
+Number of NaNs: 112
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.03369588448827618
+R2 ERROR: 
+0.00799229588214434
+Number of NaNs: 112
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.028691644514955632
+R2 ERROR: 
+0.0008249640496054145
+Number of NaNs: 112
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.023931348029797555
+R2 ERROR: 
+0.0032078573479008554
+Number of NaNs: 112
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.15098547312744587
+R2 ERROR: 
+0.007011954450095947
+Number of NaNs: 112
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.08110364077280031
+R2 ERROR: 
+-0.0005382934211071166
+Number of NaNs: 112
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.0829854532959726
+R2 ERROR: 
+0.00023016637888995106
+Number of NaNs: 112
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.07768095455757466
+R2 ERROR: 
+0.0073447785739828575
+Number of NaNs: 112
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.07717001956834625
+R2 ERROR: 
+0.010075123517176765
+Number of NaNs: 112
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.07905434236937547
+R2 ERROR: 
+-0.0010272040238519242
+Number of NaNs: 144
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.07133636733666278
+R2 ERROR: 
+0.0012604281871892997
+Number of NaNs: 836
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.08412159492691143
+R2 ERROR: 
+-0.003178054760616389
+Number of NaNs: 112
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.08105012412310933
+R2 ERROR: 
+0.0008359288451842417
+Number of NaNs: 112
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.08123426448763967
+R2 ERROR: 
+0.0029868080196508995
+Number of NaNs: 112
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.08298427267909177
+R2 ERROR: 
+-0.0005892081885425782
+Number of NaNs: 112
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.08261237886545224
+R2 ERROR: 
+-0.0015189835403495167
+Number of NaNs: 270
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.024755263882776858
+R2 ERROR: 
+-0.012166617477360031
+Number of NaNs: 836
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.07362217678395244
+R2 ERROR: 
+0.059061243733841806
+Number of NaNs: 151
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.07719240208351748
+R2 ERROR: 
+0.04675022972352527
+Number of NaNs: 142
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.07289118281312094
+R2 ERROR: 
+0.032068086840443044
+Number of NaNs: 452
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.06375052592293011
+R2 ERROR: 
+0.01760210772335491
+Number of NaNs: 1252
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.07565934079117832
+R2 ERROR: 
+0.061158032062324175
+Number of NaNs: 123
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.08792900628585913
+R2 ERROR: 
+-0.0017842487107277982
+Number of NaNs: 112
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.08800370564935309
+R2 ERROR: 
+-0.0028818394104070943
+Number of NaNs: 112
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.08245070131931068
+R2 ERROR: 
+0.0076350658700499174
+Number of NaNs: 112
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.08200613498337381
+R2 ERROR: 
+0.006337630837106589
+Number of NaNs: 112
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.08620116992715085
+R2 ERROR: 
+0.02717354645303327
+Number of NaNs: 123
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.06513070520811208
+R2 ERROR: 
+0.16875203425245766
+Number of NaNs: 168
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.07976278483268448
+R2 ERROR: 
+0.10234752816647319
+Number of NaNs: 398
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.08001124889882835
+R2 ERROR: 
+0.00859704030975661
+Number of NaNs: 112
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.08239073844515636
+R2 ERROR: 
+0.009387661401399794
+Number of NaNs: 112
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.07934196456998895
+R2 ERROR: 
+0.005738225857960355
+Number of NaNs: 112
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.0794531711848324
+R2 ERROR: 
+0.00060876556409728
+Number of NaNs: 112
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.21194064474360402
+R2 ERROR: 
+0.013225470934942085
+Number of NaNs: 320
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.08559304388975324
+R2 ERROR: 
+-0.000507540862368483
+Number of NaNs: 124
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.08652667521047602
+R2 ERROR: 
+0.0004526968747190496
+Number of NaNs: 112
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.08548398282958887
+R2 ERROR: 
+-0.0014480704498249786
+Number of NaNs: 127
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.08621701195478655
+R2 ERROR: 
+-0.000802244859491319
+Number of NaNs: 127
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.04048354971643379
+R2 ERROR: 
+0.00166708845762098
+Number of NaNs: 836
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.04805930835974996
+R2 ERROR: 
+0.0012687272731813914
+Number of NaNs: 112
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.05279748536574007
+R2 ERROR: 
+0.002395178036484813
+Number of NaNs: 112
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.04046015079391003
+R2 ERROR: 
+0.0036831688814845664
+Number of NaNs: 112
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.04787170932194012
+R2 ERROR: 
+-0.003133997055685178
+Number of NaNs: 112
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.23762207964565504
+R2 ERROR: 
+0.012852458183120419
+Number of NaNs: 112
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.0898982594475269
+R2 ERROR: 
+-0.002665065153185431
+Number of NaNs: 112
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.09185185600383369
+R2 ERROR: 
+-0.004124227881242337
+Number of NaNs: 112
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.08918147520576505
+R2 ERROR: 
+-0.0019450429384548773
+Number of NaNs: 112
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.08615572743178715
+R2 ERROR: 
+-6.193326228176588e-05
+Number of NaNs: 112
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.032374339066459125
+R2 ERROR: 
+0.0713577096502811
+Number of NaNs: 836
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.08102990156875656
+R2 ERROR: 
+1.3249948412674684e-05
+Number of NaNs: 112
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.08110336732817065
+R2 ERROR: 
+-0.003460258642796088
+Number of NaNs: 112
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.08629406323310448
+R2 ERROR: 
+-0.002803512113062956
+Number of NaNs: 112
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.0633958603227517
+R2 ERROR: 
+-0.00046130465562099765
+Number of NaNs: 836
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.03250833322533496
+R2 ERROR: 
+0.0011077249750102158
+Number of NaNs: 112
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.037018520482789655
+R2 ERROR: 
+0.003791092345960867
+Number of NaNs: 112
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.04581606311250827
+R2 ERROR: 
+0.0044032289885104214
+Number of NaNs: 112
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.06128875855329816
+R2 ERROR: 
+0.004588850187806415
+Number of NaNs: 348
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.022891004798021048
+R2 ERROR: 
+0.004784968564656045
+Number of NaNs: 118
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.1255938510709321
+R2 ERROR: 
+0.04552421441193122
+Number of NaNs: 113
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.13368720315313834
+R2 ERROR: 
+0.007285325659495023
+Number of NaNs: 191
+Prosao, sad cuvanje
+sacuvano
+############################################################################################
+############################################################################################
+PREDICTION RESULTS OF: GLOBAL STATE OF DEMOCRACY DATA SET WITH FILL METHOD: mean AND elastic ALGORITHM
+X boost regression errors:
+MSE: 
+0.04698810698822198
+R2 ERROR: 
+-0.0009529553934464197
+Number of NaNs: 503
+Prosao, sad cuvanje
+sacuvano

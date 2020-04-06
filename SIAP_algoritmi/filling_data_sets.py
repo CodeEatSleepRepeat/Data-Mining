@@ -16,9 +16,12 @@ def save_data_as_csv(data, path):
         writer = csv.writer(f)
         writer.writerows(data)
 
+
 '''
     Funkcija koja ispisuje vrednosti validacionih algoritama na gresku
 '''
+
+
 def print_validation_scores(algorithm_prediction, true_value):
     # testiranje na gresku
     MSE = validation_methods.mean_squared_error_metrics(true_value, algorithm_prediction)
@@ -28,6 +31,7 @@ def print_validation_scores(algorithm_prediction, true_value):
     print(MSE)
     print("R2 ERROR: ")
     print(r2_error)
+
 
 '''
     Funkcija koja kao parametre prima:
@@ -42,6 +46,8 @@ def print_validation_scores(algorithm_prediction, true_value):
         - Enkodovane kolone prediktora (x_data_encoded)
         - I splitovan data set u 4 skupa : x_test, x_train, y_test, y_train
 '''
+
+
 def get_important_data(doc_url_path, doc_type, x_data_column_names, y_data_column_name):
     document = {}
     if doc_type == "csv":
@@ -69,6 +75,7 @@ def get_important_data(doc_url_path, doc_type, x_data_column_names, y_data_colum
         - Naziv algoritma koji zelimo da istreniramo (algorithm)
 
 '''
+
 
 def predict_data_set(x_train, x_test, y_train, y_test, data_set_name, fill_with, algorithm):
     print('############################################################################################')
@@ -158,6 +165,8 @@ def fill_data_sets(prediction_model, x_value_encoded, x_value, y_value, name_of_
                      destination_to_save_new_documents + name_of_data_set)
     print("sacuvano")
 
+    return new_data_set
+
 
 '''
     Funkcija koja vraca mapu drzava = lista_nedostajucih_godina. 
@@ -190,6 +199,7 @@ def get_country_missing_years_map(data_set, year_from, year_to):
             zabelezeni za tu drzavu, a neophodne su
 '''
 
+
 def fill_missing_years_for_countries_in_data_set_with_nan(data_set, country_to_missing_years_map):
     data_set_values = []
 
@@ -201,8 +211,6 @@ def fill_missing_years_for_countries_in_data_set_with_nan(data_set, country_to_m
         for missing_year in list_of_missing_years:
             new_row = [country, missing_year, float('nan')]
             data_set_values.append(new_row)
-
-
 
     return data_set_values
 
@@ -239,7 +247,66 @@ def fill_missing_year_data(document, prediction_model, x_data_column_names, y_da
     x_data_encoded_full = pd.get_dummies(x_data_full)
 
     # 4
-    fill_data_sets(prediction_model, x_data_encoded_full, x_data_full, y_data_full, file_name)
+    return fill_data_sets(prediction_model, x_data_encoded_full, x_data_full, y_data_full, file_name)
+
+
+def make_filled_table(destination_from, doc_type, destination_to, data_set_name, x_column_names, y_column_name,
+                      prediction_alg_name, nan_filling_method, start_year, end_year):
+    x_data_column_name = x_column_names
+    y_data_column_name = y_column_name
+
+    data_set, x_data, y_data, x_data_encoded, \
+    x_train, x_test, y_train, y_test = get_important_data(
+        destination_from,
+        doc_type, x_data_column_name, y_data_column_name)
+
+    data_set = data_set[x_column_names + y_column_name]
+    prediction_model = predict_data_set(x_train,
+                                        x_test,
+                                        y_train,
+                                        y_test,
+                                        data_set_name, nan_filling_method,
+                                        prediction_alg_name)
+
+    return fill_missing_year_data(data_set, prediction_model,
+                                  x_data_column_name,
+                                  y_data_column_name, start_year, end_year,
+                                  destination_to)
+
+
+'''
+    - prvo pokupim sve nazive kolona.
+    - instaciraj i=1
+    - kreni for petlju kroz kolone i za svaku instaciraj data_set
+    - na svakom sledecem samo kokanteniramo prediktovanu kolonu kolonu...
+'''
+
+
+def make_filled_table_multi_columns(destination_from, doc_type, destination_to, data_set_name,
+                                    x_column_names,
+                                    prediction_alg_name, nan_filling_method, year_from, year_to):
+    document = utils.read_exel(destination_from)
+    column_names = document.columns
+    final_data_set = []
+    iterator = 0
+
+    for column_name in column_names:
+        y_column_name = [column_name]
+        if iterator > 1:
+            filled_column_data_set = make_filled_table(destination_from, doc_type, destination_to, data_set_name,
+                                                       x_column_names, y_column_name,
+                                                       prediction_alg_name, nan_filling_method, year_from, year_to)
+            if iterator == 2:
+                final_data_set = filled_column_data_set
+            else:
+                filled_column_data_set = pd.DataFrame(filled_column_data_set, columns=["1", "2", "3"])
+                final_data_set = np.concatenate((final_data_set, filled_column_data_set[['3']].values), axis=1)
+
+            iterator = iterator + 1
+        else:
+            iterator = iterator + 1
+
+    save_data_as_csv(final_data_set, destination_to_save_new_documents + destination_to)
 
 
 '''
@@ -255,427 +322,336 @@ destination_to_save_new_documents = "/home/sale/PycharmProjects/fillovane_tabele
     DATA SETOVI
 '''
 
-
 '''
 AGRICULTURAL METHANE EMISSION DATA SET
 '''
 
-# x_data_column_name_a_m_e = ['Country Code', 'Year']
-# y_data_column_name_a_m_e = ['Agricultural methane emissions (% of total)']
+# destination_from = documents_destination + "agricultural_methane_emission_filled_data_set.xlsx"
+# doc_type = "exel"
+# destination_to = 'agricultural_methane_emission_filled_years_data_set'
+# data_set_name = "AGRICULTURAL METHANE EMISSION DATA SET"
+# x_column_names = ['Country Code', 'Year']
+# y_column_name = ['Agricultural methane emissions (% of total)']
+# prediction_alg_name = "elastic"
+# nan_filling_method = "mean"
 #
-# agricultural_methane_emission, x_data_a_m_e, y_data_a_m_e, x_data_encoded_a_m_e, \
-# x_train_a_m_e, x_test_a_m_e, y_train_a_m_e, y_test_a_m_e = get_important_data(
-#     documents_destination + "agricultural_methane_emission_filled_data_set.xlsx",
-#     "exel", x_data_column_name_a_m_e, y_data_column_name_a_m_e)
-#
-# prediction_model_a_m_e = predict_data_set(x_train_a_m_e,
-#                                           x_test_a_m_e,
-#                                           y_train_a_m_e,
-#                                           y_test_a_m_e,
-#                                           'AGRICULTURAL METHANE EMISSION DATA SET', 'mean',
-#                                           'elastic')
-#
-# fill_missing_year_data(agricultural_methane_emission, prediction_model_a_m_e, x_data_column_name_a_m_e,
-#                        y_data_column_name_a_m_e, year_from, year_to,
-#                        'agricultural_methane_emission_filled_years_data_set')
+# make_filled_table(destination_from, doc_type, destination_to, data_set_name, x_column_names, y_column_name,
+#                   prediction_alg_name, nan_filling_method, year_from, year_to)
+
 
 '''
 CORRUPTION PERCEPTION INDEX 2 DATASET
 '''
-
-# x_data_column_name_c_p_i_2 = ['Country Code', 'Year']
-# y_data_column_name_c_p_i_2 = ['corruption_index']
+# destination_from = documents_destination + "coruption_perception_index_2_filled_data_set.xlsx"
+# doc_type = "exel"
+# destination_to = 'coruption_perception_index_2_filled_years'
+# data_set_name = "CORRUPTION PERCEPTION INDEX 2 DATASET"
+# x_column_names = ['Country Code', 'Year']
+# y_column_name = ['corruption_index']
+# prediction_alg_name = "elastic"
+# nan_filling_method = "mean"
 #
-# corruption_perception_index_2, x_data_c_p_i_2, y_data_c_p_i_2, x_data_encoded_c_p_i_2, \
-# x_train_c_p_i_2, x_test_c_p_i_2, y_train_c_p_i_2, y_test_c_p_i_2 = get_important_data(
-#     documents_destination + "coruption_perception_index_2_filled_data_set.xlsx",
-#     "exel", x_data_column_name_c_p_i_2, y_data_column_name_c_p_i_2)
-#
-# prediction_model_coruption_perception_index_2 = predict_data_set(x_train_c_p_i_2,
-#                                                                  x_test_c_p_i_2,
-#                                                                  y_train_c_p_i_2,
-#                                                                  y_test_c_p_i_2,
-#                                                                  'CORRUPTION PERCEPTION INDEX 2 DATASET', 'mean',
-#                                                                  'elastic')
-#
-# fill_missing_year_data(corruption_perception_index_2, prediction_model_coruption_perception_index_2,
-#                        x_data_column_name_c_p_i_2,
-#                        y_data_column_name_c_p_i_2, year_from, year_to, 'coruption_perception_index_2_filled_years')
+# make_filled_table(destination_from, doc_type, destination_to, data_set_name, x_column_names, y_column_name,
+#                   prediction_alg_name, nan_filling_method, year_from, year_to)
 
 '''
 DAILY PER CAPITA SUPPLY OF CALORIES DATA SET
 '''
 
-# x_data_column_name_d_p_c_s_o_c = ['Country Code', 'Year']
-# y_data_column_name_d_p_c_s_o_c = ['Daily caloric supply (kcal/person/day)']
+# destination_from = documents_destination + "daily-per-capita-supply-of-calories.xlsx"
+# doc_type = "exel"
+# destination_to = 'daily_per_capita_supply_of_calories_filled_years_data_set'
+# data_set_name = "DAILY PER CAPITA SUPPLY OF CALORIES DATA SET"
+# x_column_names = ['Country Code', 'Year']
+# y_column_name = ['Daily caloric supply (kcal/person/day)']
+# prediction_alg_name = "elastic"
+# nan_filling_method = "mean"
 #
-# daily_per_capita_supply_of_calories, x_data_d_p_c_s_o_c, y_data_d_p_c_s_o_c, x_data_encoded_d_p_c_s_o_c, \
-# x_train_d_p_c_s_o_c, x_test_d_p_c_s_o_c, y_train_d_p_c_s_o_c, y_test_d_p_c_s_o_c = get_important_data(
-#     documents_destination + "daily-per-capita-supply-of-calories.xlsx",
-#     "exel", x_data_column_name_d_p_c_s_o_c, y_data_column_name_d_p_c_s_o_c)
-#
-# prediction_model_d_p_c_s_o_c = predict_data_set(x_train_d_p_c_s_o_c,
-#                                                 x_test_d_p_c_s_o_c,
-#                                                 y_train_d_p_c_s_o_c,
-#                                                 y_test_d_p_c_s_o_c,
-#                                                 'DAILY PER CAPITA SUPPLY OF CALORIES DATA SET', 'mean',
-#                                                 'elastic')
-#
-# fill_missing_year_data(daily_per_capita_supply_of_calories, prediction_model_d_p_c_s_o_c,
-#                        x_data_column_name_d_p_c_s_o_c,
-#                        y_data_column_name_d_p_c_s_o_c, year_from, year_to,
-#                        'daily_per_capita_supply_of_calories_filled_years_data_set')
+# make_filled_table(destination_from, doc_type, destination_to, data_set_name, x_column_names, y_column_name,
+#                   prediction_alg_name, nan_filling_method, year_from, year_to)
+
 
 '''
 LIFE SATISFACTION DATA SET
 '''
+# destination_from = documents_destination + "life_satisfaction.xlsx"
+# doc_type = "exel"
+# destination_to = 'life_satisfaction_filled_years_data_set'
+# data_set_name = "LIFE SATISFACTION DATA SET"
+# x_column_names = ['Country Code', 'Year']
+# y_column_name = ['Happines']
+# prediction_alg_name = "elastic"
+# nan_filling_method = "mean"
+#
+# make_filled_table(destination_from, doc_type, destination_to, data_set_name, x_column_names, y_column_name,
+#                   prediction_alg_name, nan_filling_method, year_from, year_to)
 
-# x_data_column_name_l_s = ['Country Code', 'Year']
-# y_data_column_name_l_s = ['Happines']
-#
-# life_satisfaction, x_data_l_s, y_data_l_s, x_data_encoded_l_s, \
-# x_train_l_s, x_test_l_s, y_train_l_s, y_test_l_s = get_important_data(
-#     documents_destination + "life_satisfaction.xlsx",
-#     "exel", x_data_column_name_l_s, y_data_column_name_l_s)
-#
-# prediction_model_l_s = predict_data_set(x_train_l_s,
-#                                         x_test_l_s,
-#                                         y_train_l_s,
-#                                         y_test_l_s,
-#                                         'LIFE SATISFACTION DATA SET', 'mean',
-#                                         'elastic')
-#
-# fill_missing_year_data(life_satisfaction, prediction_model_l_s,
-#                        x_data_column_name_l_s,
-#                        y_data_column_name_l_s, year_from, year_to,
-#                        'life_satisfaction_filled_years_data_set')
 
 '''
 POLITICAL REGIME UPDATED2016 DATA SET
 '''
+# destination_from = documents_destination + "political-regime-updated2016.xlsx"
+# doc_type = "exel"
+# destination_to = 'political_regime_updated2016_filled_years_data_set'
+# data_set_name = "POLITICAL REGIME UPDATED2016 DATA SET"
+# x_column_names = ['Country Code', 'Year']
+# y_column_name = ['Political Regime (OWID based on Polity IV and Wimmer & Min) (Score)']
+# prediction_alg_name = "elastic"
+# nan_filling_method = "mean"
+#
+# make_filled_table(destination_from, doc_type, destination_to, data_set_name, x_column_names, y_column_name,
+#                   prediction_alg_name, nan_filling_method, year_from, year_to)
 
-# x_data_column_name_p_r_u = ['Country Code', 'Year']
-# y_data_column_name_p_r_u = ['Political Regime (OWID based on Polity IV and Wimmer & Min) (Score)']
-#
-# political_regime_updated2016, x_data_p_r_u, y_data_p_r_u, x_data_encoded_p_r_u, \
-# x_train_p_r_u, x_test_p_r_u, y_train_p_r_u, y_test_p_r_u = get_important_data(
-#     documents_destination + "political-regime-updated2016.xlsx",
-#     "exel", x_data_column_name_p_r_u, y_data_column_name_p_r_u)
-#
-# prediction_model_p_r_u = predict_data_set(x_train_p_r_u,
-#                                           x_test_p_r_u,
-#                                           y_train_p_r_u,
-#                                           y_test_p_r_u,
-#                                           'POLITICAL REGIME UPDATED2016 DATA SET', 'mean',
-#                                           'elastic')
-#
-# fill_missing_year_data(political_regime_updated2016, prediction_model_p_r_u,
-#                        x_data_column_name_p_r_u,
-#                        y_data_column_name_p_r_u, year_from, year_to,
-#                        'political_regime_updated2016_filled_years_data_set')
 
 '''
 SHARE WITH ALCOHOL OR DRUG USE DISORDERS
 '''
-# x_data_column_name_s_w_a_o_d_u_d = ['Country Code', 'Year']
-# y_data_column_name_s_w_a_o_d_u_d = [
-#     'Prevalence - Alcohol and substance use disorders: Both (age-standardized percent) (%)']
+# destination_from = documents_destination + "share-with-alcohol-or-drug-use-disorders.xlsx"
+# doc_type = "exel"
+# destination_to = 'share_with_alcohol_or_drug_use_disorders_filled_years_data_set'
+# data_set_name = "SHARE WITH ALCOHOL OR DRUG USE DISORDERS"
+# x_column_names = ['Country Code', 'Year']
+# y_column_name = ['Prevalence - Alcohol and substance use disorders: Both (age-standardized percent) (%)']
+# prediction_alg_name = "elastic"
+# nan_filling_method = "mean"
 #
-# share_with_alcohol_or_drug_use_disorders, x_data_s_w_a_o_d_u_d, y_data_s_w_a_o_d_u_d, x_data_encoded_s_w_a_o_d_u_d, \
-# x_train_s_w_a_o_d_u_d, x_test_s_w_a_o_d_u_d, y_train_s_w_a_o_d_u_d, y_test_s_w_a_o_d_u_d = get_important_data(
-#     documents_destination + "share-with-alcohol-or-drug-use-disorders.xlsx",
-#     "exel", x_data_column_name_s_w_a_o_d_u_d, y_data_column_name_s_w_a_o_d_u_d)
-#
-# prediction_model_s_w_a_o_d_u_d = predict_data_set(x_train_s_w_a_o_d_u_d,
-#                                                   x_test_s_w_a_o_d_u_d,
-#                                                   y_train_s_w_a_o_d_u_d,
-#                                                   y_test_s_w_a_o_d_u_d,
-#                                                   'SHARE WITH ALCOHOL OR DRUG USE DISORDERS', 'mean',
-#                                                   'elastic')
-#
-# fill_missing_year_data(share_with_alcohol_or_drug_use_disorders, prediction_model_s_w_a_o_d_u_d,
-#                        x_data_column_name_s_w_a_o_d_u_d,
-#                        y_data_column_name_s_w_a_o_d_u_d, year_from, year_to,
-#                        'share_with_alcohol_or_drug_use_disorders_filled_years_data_set')
+# make_filled_table(destination_from, doc_type, destination_to, data_set_name, x_column_names, y_column_name,
+#                   prediction_alg_name, nan_filling_method, year_from, year_to)
 
 '''
 UN MIGRANT STOCK BY ORIGIN AND DESTINATION 2019
 '''
+# destination_from = documents_destination + "UN_MigrantStockByOriginAndDestination_2019.xlsx"
+# doc_type = "exel"
+# destination_to = 'UN_MigrantStockByOriginAndDestination_2019_filled_year_data_set'
+# data_set_name = "UN MIGRANT STOCK BY ORIGIN AND DESTINATION 2019"
+# x_column_names = ['Country Code', 'Year']
+# y_column_name = ['Total origin']
+# prediction_alg_name = "elastic"
+# nan_filling_method = "mean"
+#
+# make_filled_table(destination_from, doc_type, destination_to, data_set_name, x_column_names, y_column_name,
+#                   prediction_alg_name, nan_filling_method, year_from, year_to)
 
-# x_data_column_name_un_m_s_b_o_a_d = ['Country Code', 'Year']
-# y_data_column_name_un_m_s_b_o_a_d = ['Total origin']
-#
-# UN_MigrantStockByOriginAndDestination_2019, x_data_un_m_s_b_o_a_d, y_data_un_m_s_b_o_a_d, x_data_encoded_un_m_s_b_o_a_d, \
-# x_train_un_m_s_b_o_a_d, x_test_un_m_s_b_o_a_d, y_train_un_m_s_b_o_a_d, y_test_un_m_s_b_o_a_d = get_important_data(
-#     documents_destination + "UN_MigrantStockByOriginAndDestination_2019.xlsx",
-#     "exel", x_data_column_name_un_m_s_b_o_a_d, y_data_column_name_un_m_s_b_o_a_d)
-#
-# prediction_model_un_m_s_b_o_a_d = predict_data_set(x_train_un_m_s_b_o_a_d,
-#                                                    x_test_un_m_s_b_o_a_d,
-#                                                    y_train_un_m_s_b_o_a_d,
-#                                                    y_test_un_m_s_b_o_a_d,
-#                                                    'UN MIGRANT STOCK BY ORIGIN AND DESTINATION 2019', 'mean',
-#                                                    'elastic')
-#
-# fill_missing_year_data(UN_MigrantStockByOriginAndDestination_2019, prediction_model_un_m_s_b_o_a_d,
-#                        x_data_column_name_un_m_s_b_o_a_d,
-#                        y_data_column_name_un_m_s_b_o_a_d, year_from, year_to,
-#                        'UN_MigrantStockByOriginAndDestination_2019_filled_year_data_set')
 
 '''
 FREEDOM OF PRESS DATA, LEGAL ENVIRONMENT AS PREDICTING VALUE
 '''
-# 'Political environment', 'Economic environment', 'Total Score'
-# x_data_column_name_f_o_p_d = ['Country Code', 'Year']
-# y_data_column_name_f_o_p_d = ['Total Score']
+# destination_from = documents_destination + "Freedom_of_the_Press_Data.xlsx"
+# doc_type = "exel"
+# destination_to = 'freedom_of_press_data_filled_total_score_year_data_set'
+# data_set_name = "FREEDOM OF PRESS DATA DATA SET"
+# x_column_names = ['Country Code', 'Year']
+# y_column_name = ['Total Score']
+# prediction_alg_name = "elastic"
+# nan_filling_method = "zero"
 #
-# freedom_of_the_press_data, x_data_f_o_p_d, y_data_f_o_p_d, x_data_encoded_f_o_p_d, \
-# x_train_f_o_p_d, x_test_f_o_p_d, y_train_f_o_p_d, y_test_f_o_p_d = get_important_data(
-#     documents_destination + "Freedom_of_the_Press_Data.xlsx",
-#     "exel", x_data_column_name_f_o_p_d, y_data_column_name_f_o_p_d)
-#
-# freedom_of_the_press_data = freedom_of_the_press_data[['Country Code', 'Year', 'Total Score']]
-# prediction_model_f_o_p_d = predict_data_set(x_train_f_o_p_d,
-#                                                    x_test_f_o_p_d,
-#                                                    y_train_f_o_p_d,
-#                                                    y_test_f_o_p_d,
-#                                                    'FREEDOM OF PRESS DATA DATA SET', 'zero',
-#                                                    'elastic')
-#
-# fill_missing_year_data(freedom_of_the_press_data, prediction_model_f_o_p_d,
-#                        x_data_column_name_f_o_p_d,
-#                        y_data_column_name_f_o_p_d, year_from, year_to,
-#                        'freedom_of_press_data_filled_total_score_year_data_set')
+# make_filled_table(destination_from, doc_type, destination_to, data_set_name, x_column_names, y_column_name,
+#                   prediction_alg_name, nan_filling_method, year_from, year_to)
+
 
 '''
     EMPLOYERS PERCENTAGE
 '''
+# destination_from = documents_destination + "employers_percentage.xlsx"
+# doc_type = "exel"
+# destination_to = 'employers_percentage_filled_year_data_set'
+# data_set_name = "EMPLOYERS PERCENTAGE"
+# x_column_names = ['Country Code', 'Year']
+# y_column_name = ['Employers, total (% of total employment) (modeled ILO estimate)']
+# prediction_alg_name = "elastic"
+# nan_filling_method = "mean"
+#
+# make_filled_table(destination_from, doc_type, destination_to, data_set_name, x_column_names, y_column_name,
+#                   prediction_alg_name, nan_filling_method, year_from, year_to)
 
-x_data_column_name_e_p = ['Country Code', 'Year']
-y_data_column_name_e_p = ['Employers, total (% of total employment) (modeled ILO estimate)']
-
-employers_percentage, x_data_e_p, y_data_e_p, x_data_encoded_e_p, \
-x_train_e_p, x_test_e_p, y_train_e_p, y_test_e_p = get_important_data(
-    documents_destination + "employers_percentage.xlsx",
-    "exel", x_data_column_name_e_p, y_data_column_name_e_p)
-
-employers_percentage = employers_percentage[['Country Code', 'Year', 'Employers, total (% of total employment) (modeled ILO estimate)']]
-prediction_model_e_p = predict_data_set(x_train_e_p,
-                                                   x_test_e_p,
-                                                   y_train_e_p,
-                                                   y_test_e_p,
-                                                   'EMPLOYERS PERCENTAGE', 'mean',
-                                                   'elastic')
-
-fill_missing_year_data(employers_percentage, prediction_model_e_p,
-                       x_data_column_name_e_p,
-                       y_data_column_name_e_p, year_from, year_to,
-                       'employers_percentage_filled_year_data_set')
 
 '''
     inflation data set
 '''
+# destination_from = documents_destination + "inflation.xlsx"
+# doc_type = "exel"
+# destination_to = 'inflation_data_set_filled_year_data_set'
+# data_set_name = "INFLATION DATA SET"
+# x_column_names = ['Country Code', 'Year']
+# y_column_name = ['inflation']
+# prediction_alg_name = "elastic"
+# nan_filling_method = "mean"
+#
+# make_filled_table(destination_from, doc_type, destination_to, data_set_name, x_column_names, y_column_name,
+#                   prediction_alg_name, nan_filling_method, year_from, year_to)
 
-x_data_column_name_i_d = ['Country Code', 'Year']
-y_data_column_name_i_d = ['inflation']
-
-inflation_data_set, x_data_i_d, y_data_i_d, x_data_encoded_i_d, \
-x_train_i_d, x_test_i_d, y_train_i_d, y_test_i_d = get_important_data(
-    documents_destination + "inflation.xlsx",
-    "exel", x_data_column_name_i_d, y_data_column_name_i_d)
-
-inflation_data_set = inflation_data_set[['Country Code', 'Year', 'inflation']]
-prediction_model_i_d = predict_data_set(x_train_i_d,
-                                                   x_test_i_d,
-                                                   y_train_i_d,
-                                                   y_test_i_d,
-                                                   'INFLATION DATA SET', 'mean',
-                                                   'elastic')
-
-fill_missing_year_data(inflation_data_set, prediction_model_i_d,
-                       x_data_column_name_i_d,
-                       y_data_column_name_i_d, year_from, year_to,
-                       'inflation_data_set_filled_year_data_set')
 
 '''
    Population density data set 
 '''
-
-x_data_column_name_p_d = ['Country Code', 'Year']
-y_data_column_name_p_d = ['Population density (people per sq. km of land area)']
-
-population_density, x_data_p_d, y_data_p_d, x_data_encoded_p_d, \
-x_train_p_d, x_test_p_d, y_train_p_d, y_test_p_d = get_important_data(
-    documents_destination + "population_density.xlsx",
-    "exel", x_data_column_name_p_d, y_data_column_name_p_d)
-
-population_density = population_density[['Country Code', 'Year', 'Population density (people per sq. km of land area)']]
-prediction_model_p_d = predict_data_set(x_train_p_d,
-                                                   x_test_p_d,
-                                                   y_train_p_d,
-                                                   y_test_p_d,
-                                                   'POPULATION DENSITY DATA SET', 'mean',
-                                                   'elastic')
-
-fill_missing_year_data(population_density, prediction_model_p_d,
-                       x_data_column_name_p_d,
-                       y_data_column_name_p_d, year_from, year_to,
-                       'population_density_filled_year_data_set')
+# destination_from = documents_destination + "population_density.xlsx"
+# doc_type = "exel"
+# destination_to = 'population_density_filled_year_data_set'
+# data_set_name = "POPULATION DENSITY DATA SET"
+# x_column_names = ['Country Code', 'Year']
+# y_column_name = ['Population density (people per sq. km of land area)']
+# prediction_alg_name = "elastic"
+# nan_filling_method = "mean"
+#
+# make_filled_table(destination_from, doc_type, destination_to, data_set_name, x_column_names, y_column_name,
+#                   prediction_alg_name, nan_filling_method, year_from, year_to)
 
 '''
     PTS-2019 DATA SET
 '''
+# destination_from = documents_destination + "PTS-2019x.xlsx"
+# doc_type = "exel"
+# destination_to = 'pts_2019_filled_year_data_set'
+# data_set_name = "PTS-2019 DATA SET"
+# x_column_names = ['Country Code', 'Year']
+# y_column_name = ['PTS']
+# prediction_alg_name = "elastic"
+# nan_filling_method = "mean"
+#
+# make_filled_table(destination_from, doc_type, destination_to, data_set_name, x_column_names, y_column_name,
+#                   prediction_alg_name, nan_filling_method, year_from, year_to)
 
-x_data_column_name_pts = ['Country Code', 'Year']
-y_data_column_name_pts = ['PTS']
-
-pts_2019, x_data_pts, y_data_pts, x_data_encoded_pts, \
-x_train_pts, x_test_pts, y_train_pts, y_test_pts = get_important_data(
-    documents_destination + "PTS-2019x.xlsx",
-    "exel", x_data_column_name_pts, y_data_column_name_pts)
-
-pts_2019 = pts_2019[['Country Code', 'Year', 'PTS']]
-prediction_model_pts = predict_data_set(x_train_pts,
-                                                   x_test_pts,
-                                                   y_train_pts,
-                                                   y_test_pts,
-                                                   'PTS-2019 DATA SET', 'mean',
-                                                   'elastic')
-
-fill_missing_year_data(pts_2019, prediction_model_pts,
-                       x_data_column_name_pts,
-                       y_data_column_name_pts, year_from, year_to,
-                       'pts_2019_filled_year_data_set')
 
 '''
     UNEPLOYMENT DATA
 '''
+# destination_from = documents_destination + "unemployment.xlsx"
+# doc_type = "exel"
+# destination_to = 'uneployment_filled_year_data_set'
+# data_set_name = "UNEPLOYMENT DATA SET"
+# x_column_names = ['Country Code', 'Year']
+# y_column_name = ['Unemployment, total (% of total labor force) (national estimate)']
+# prediction_alg_name = "elastic"
+# nan_filling_method = "mean"
+#
+# make_filled_table(destination_from, doc_type, destination_to, data_set_name, x_column_names, y_column_name,
+#                   prediction_alg_name, nan_filling_method, year_from, year_to)
 
-x_data_column_name_u_d = ['Country Code', 'Year']
-y_data_column_name_u_d = ['Unemployment, total (% of total labor force) (national estimate)']
-
-uneployment_data, x_data_u_d, y_data_u_d, x_data_encoded_u_d, \
-x_train_u_d, x_test_u_d, y_train_u_d, y_test_u_d = get_important_data(
-    documents_destination + "unemployment.xlsx",
-    "exel", x_data_column_name_u_d, y_data_column_name_u_d)
-
-uneployment_data = uneployment_data[['Country Code', 'Year', 'Unemployment, total (% of total labor force) (national estimate)']]
-prediction_model_u_d = predict_data_set(x_train_u_d,
-                                                   x_test_u_d,
-                                                   y_train_u_d,
-                                                   y_test_u_d,
-                                                   'UNEPLOYMENT DATA SET', 'mean',
-                                                   'elastic')
-
-fill_missing_year_data(uneployment_data, prediction_model_u_d,
-                       x_data_column_name_u_d,
-                       y_data_column_name_u_d, year_from, year_to,
-                       'uneployment_filled_year_data_set')
 
 '''
     URBAN POPULATION GROWTH 
 '''
-
-x_data_column_name_u_p_g = ['Country Code', 'Year']
-y_data_column_name_u_p_g = ['Urban population growth(%)']
-
-urban_population_growth, x_data_u_p_g, y_data_u_p_g, x_data_encoded_u_p_g, \
-x_train_u_p_g, x_test_u_p_g, y_train_u_p_g, y_test_u_p_g = get_important_data(
-    documents_destination + "urban_population_growth_sredjeno.xlsx",
-    "exel", x_data_column_name_u_p_g, y_data_column_name_u_p_g)
-
-urban_population_growth = urban_population_growth[['Country Code', 'Year', 'Urban population growth(%)']]
-prediction_model_u_p_g = predict_data_set(x_train_u_p_g,
-                                                   x_test_u_p_g,
-                                                   y_train_u_p_g,
-                                                   y_test_u_p_g,
-                                                   'URBAN POPULATION DATA SET', 'mean',
-                                                   'elastic')
-
-fill_missing_year_data(urban_population_growth, prediction_model_u_p_g,
-                       x_data_column_name_u_p_g,
-                       y_data_column_name_u_p_g, year_from, year_to,
-                       'urban_population_growth_filled_year_data_set')
+# destination_from = documents_destination + "urban_population_growth_sredjeno.xlsx"
+# doc_type = "exel"
+# destination_to = 'urban_population_growth_filled_year_data_set'
+# data_set_name = "URBAN POPULATION DATA SET"
+# x_column_names = ['Country Code', 'Year']
+# y_column_name = ['Urban population growth(%)']
+# prediction_alg_name = "elastic"
+# nan_filling_method = "mean"
+#
+# make_filled_table(destination_from, doc_type, destination_to, data_set_name, x_column_names, y_column_name,
+#                   prediction_alg_name, nan_filling_method, year_from, year_to)
 
 
 '''
-    SCHOOLING DATA SET
+    SCHOOLING 1ST COLUMN DATA SET
 '''
-
-x_data_column_name_schooling = ['Country Code', 'Year']
-y_data_column_name_schooling = ['School enrollment, tertiary (% gross)']
-
-schooling, x_data_schooling, y_data_schooling, x_data_encoded_schooling, \
-x_train_schooling, x_test_schooling, y_train_schooling, y_test_schooling = get_important_data(
-    documents_destination + "schooling.xlsx",
-    "exel", x_data_column_name_schooling, y_data_column_name_schooling)
-
-schooling = schooling[['Country Code', 'Year', 'School enrollment, tertiary (% gross)']]
-prediction_model_schooling = predict_data_set(x_train_schooling,
-                                                   x_test_schooling,
-                                                   y_train_schooling,
-                                                   y_test_schooling,
-                                                   'SCHOOLING DATA SET', 'mean',
-                                                   'elastic')
-
-fill_missing_year_data(schooling, prediction_model_schooling,
-                       x_data_column_name_schooling,
-                       y_data_column_name_schooling, year_from, year_to,
-                       'schooling_1_filled_year_data_set')
-
-'''
-    SCHOOLING 2  DATA SET
-'''
-
-x_data_column_name_schooling_2 = ['Country Code', 'Year']
-y_data_column_name_schooling_2 = ['School enrollment, secondary (% gross)']
-
-schooling_2, x_data_schooling_2, y_data_schooling_2, x_data_encoded_schooling_2, \
-x_train_schooling_2, x_test_schooling_2, y_train_schooling_2, y_test_schooling_2 = get_important_data(
-    documents_destination + "schooling.xlsx",
-    "exel", x_data_column_name_schooling_2, y_data_column_name_schooling_2)
-
-schooling_2 = schooling_2[['Country Code', 'Year', 'School enrollment, secondary (% gross)']]
-prediction_model_schooling_2 = predict_data_set(x_train_schooling_2,
-                                                   x_test_schooling_2,
-                                                   y_train_schooling_2,
-                                                   y_test_schooling_2,
-                                                   'SCHOOLING_2 DATA SET', 'mean',
-                                                   'elastic')
-
-fill_missing_year_data(schooling_2, prediction_model_schooling_2,
-                       x_data_column_name_schooling_2,
-                       y_data_column_name_schooling_2, year_from, year_to,
-                       'schooling_2_filled_year_data_set')
+# destination_from = documents_destination + "schooling.xlsx"
+# doc_type = "exel"
+# destination_to = 'schooling_1_filled_year_data_set'
+# data_set_name = "SCHOOLING DATA SET"
+# x_column_names = ['Country Code', 'Year']
+# y_column_name = ['School enrollment, tertiary (% gross)']
+# prediction_alg_name = "elastic"
+# nan_filling_method = "mean"
+#
+# make_filled_table(destination_from, doc_type, destination_to, data_set_name, x_column_names, y_column_name,
+#                   prediction_alg_name, nan_filling_method, year_from, year_to)
 
 
 '''
-    SCHOOLING 3  DATA SET
+    SCHOOLING 2ND COLUMN  DATA SET
 '''
 
-x_data_column_name_schooling_3 = ['Country Code', 'Year']
-y_data_column_name_schooling_3 = ['School enrollment, primary (% gross)']
+# destination_from = documents_destination + "schooling.xlsx"
+# doc_type = "exel"
+# destination_to = 'schooling_2_filled_year_data_set'
+# data_set_name = "SCHOOLING DATA SET"
+# x_column_names = ['Country Code', 'Year']
+# y_column_name = ['School enrollment, secondary (% gross)']
+# prediction_alg_name = "elastic"
+# nan_filling_method = "mean"
+#
+# make_filled_table(destination_from, doc_type, destination_to, data_set_name, x_column_names, y_column_name,
+#                   prediction_alg_name, nan_filling_method, year_from, year_to)
 
-schooling_3, x_data_schooling_3, y_data_schooling_3, x_data_encoded_schooling_3, \
-x_train_schooling_3, x_test_schooling_3, y_train_schooling_3, y_test_schooling_3 = get_important_data(
-    documents_destination + "schooling.xlsx",
-    "exel", x_data_column_name_schooling_3, y_data_column_name_schooling_3)
+'''
+    SCHOOLING 3td COLUMN  DATA SET
+'''
 
-schooling_3 = schooling_3[['Country Code', 'Year', 'School enrollment, primary (% gross)']]
-prediction_model_schooling_3 = predict_data_set(x_train_schooling_3,
-                                                   x_test_schooling_3,
-                                                   y_train_schooling_3,
-                                                   y_test_schooling_3,
-                                                   'SCHOOLING_3 DATA SET', 'mean',
-                                                   'elastic')
+# destination_from = documents_destination + "schooling.xlsx"
+# doc_type = "exel"
+# destination_to = 'schooling_3_filled_year_data_set'
+# data_set_name = "SCHOOLING DATA SET"
+# x_column_names = ['Country Code', 'Year']
+# y_column_name = ['School enrollment, primary (% gross)']
+# prediction_alg_name = "elastic"
+# nan_filling_method = "mean"
+#
+# make_filled_table(destination_from, doc_type, destination_to, data_set_name, x_column_names, y_column_name,
+#                   prediction_alg_name, nan_filling_method, year_from, year_to)
 
-fill_missing_year_data(schooling_3, prediction_model_schooling_3,
-                       x_data_column_name_schooling_3,
-                       y_data_column_name_schooling_3, year_from, year_to,
-                       'schooling_3_filled_year_data_set')
+'''
+internet_users_filtered
+'''
+# destination_from = documents_destination + "internet_users_filtered.xlsx"
+# doc_type = "exel"
+# destination_to = 'internet_users_filled_year_data_set'
+# data_set_name = "INTERNET USERS DATA SET"
+# x_column_names = ['Country Code', 'Year']
+# y_column_name = ['usage']
+# prediction_alg_name = "elastic"
+# nan_filling_method = "mean"
+#
+# make_filled_table(destination_from, doc_type, destination_to, data_set_name, x_column_names, y_column_name,
+#                   prediction_alg_name, nan_filling_method, year_from, year_to)
 
 
 '''
 military_expenditure_formated
 '''
+destination_from = documents_destination + "military_expenditure_formated.xlsx"
+doc_type = "exel"
+destination_to = 'military_expenditure_formated_year_data_set'
+data_set_name = "MILITARY EXPENDITURE SET"
+x_column_names = ['Country Code', 'Year']
+prediction_alg_name = "elastic"
+nan_filling_method = "mean"
 
+make_filled_table_multi_columns(destination_from, doc_type, destination_to, data_set_name,
+                                    x_column_names,
+                                    prediction_alg_name, nan_filling_method, year_from, year_to)
+
+
+
+'''
+school_enrollment
+'''
+# destination_from = documents_destination + "school_enrollment.xlsx"
+# doc_type = "exel"
+# destination_to = 'school_enrollment_formated_year_data_set'
+# data_set_name = "SCHOOL ENROLLMENT DATA SET"
+# x_column_names = ['Country Code', 'Year']
+# prediction_alg_name = "elastic"
+# nan_filling_method = "mean"
+#
+# make_filled_table_multi_columns(destination_from, doc_type, destination_to, data_set_name,
+#                                     x_column_names,
+#                                     prediction_alg_name, nan_filling_method, year_from, year_to)
+
+'''
+Global_State_of_Democracy_Dataset
+'''
+# destination_from = documents_destination + "Global_State_of_Democracy_Dataset.xlsx"
+# doc_type = "exel"
+# destination_to = 'Global_State_of_Democracy_Dataset_formated_year_data_set'
+# data_set_name = "GLOBAL STATE OF DEMOCRACY DATA SET"
+# x_column_names = ['Country Code', 'Year']
+# prediction_alg_name = "elastic"
+# nan_filling_method = "mean"
+#
+# make_filled_table_multi_columns(destination_from, doc_type, destination_to, data_set_name,
+#                                     x_column_names,
+#                                     prediction_alg_name, nan_filling_method, year_from, year_to)
