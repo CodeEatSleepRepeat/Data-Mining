@@ -185,6 +185,8 @@ def get_country_missing_years_map(data_set, year_from, year_to):
                 country_to_missing_years_map[row[0]].remove(row[1])
         else:
             country_to_missing_years_map[row[0]] = all_years
+            if row[1] in country_to_missing_years_map[row[0]]:
+                country_to_missing_years_map[row[0]].remove(row[1])
 
     return country_to_missing_years_map
 
@@ -314,7 +316,7 @@ def make_filled_table_multi_columns(destination_from, doc_type, destination_to, 
 '''
 year_from = 1990
 year_to = 2017
-documents_destination = "/home/sale/Desktop/GitHubSIAP/Data-Mining/josTrebaRegresija/novo/"
+documents_destination = "/home/sale/Desktop/GitHubSIAP/Data-Mining/josTrebaRegresija/novo/novo2/"
 destination_to_save_new_documents = "/home/sale/PycharmProjects/fillovane_tabele/"
 
 '''
@@ -357,8 +359,7 @@ CORRUPTION PERCEPTION INDEX 2 DATASET
 '''
 DAILY PER CAPITA SUPPLY OF CALORIES DATA SET
 '''
-
-# destination_from = documents_destination + "daily-per-capita-supply-of-calories.xlsx"
+# destination_from = documents_destination + "daily_per_capita_supply_of_calories_filled_years_data_set.xlsx"
 # doc_type = "exel"
 # destination_to = 'daily_per_capita_supply_of_calories_filled_years_data_set'
 # data_set_name = "DAILY PER CAPITA SUPPLY OF CALORIES DATA SET"
@@ -374,7 +375,7 @@ DAILY PER CAPITA SUPPLY OF CALORIES DATA SET
 '''
 LIFE SATISFACTION DATA SET
 '''
-# destination_from = documents_destination + "life_satisfaction.xlsx"
+# destination_from = documents_destination + "life_satisfaction_filled_years_data_set.xlsx"
 # doc_type = "exel"
 # destination_to = 'life_satisfaction_filled_years_data_set'
 # data_set_name = "LIFE SATISFACTION DATA SET"
@@ -390,7 +391,7 @@ LIFE SATISFACTION DATA SET
 '''
 POLITICAL REGIME UPDATED2016 DATA SET
 '''
-# destination_from = documents_destination + "political-regime-updated2016.xlsx"
+# destination_from = documents_destination + "political_regime_updated2016_filled_years_data_set.xlsx"
 # doc_type = "exel"
 # destination_to = 'political_regime_updated2016_filled_years_data_set'
 # data_set_name = "POLITICAL REGIME UPDATED2016 DATA SET"
@@ -612,17 +613,17 @@ internet_users_filtered
 '''
 military_expenditure_formated
 '''
-destination_from = documents_destination + "military_expenditure_formated.xlsx"
-doc_type = "exel"
-destination_to = 'military_expenditure_formated_year_data_set'
-data_set_name = "MILITARY EXPENDITURE SET"
-x_column_names = ['Country Code', 'Year']
-prediction_alg_name = "elastic"
-nan_filling_method = "mean"
-
-make_filled_table_multi_columns(destination_from, doc_type, destination_to, data_set_name,
-                                    x_column_names,
-                                    prediction_alg_name, nan_filling_method, year_from, year_to)
+# destination_from = documents_destination + "military_expenditure_formated.xlsx"
+# doc_type = "exel"
+# destination_to = 'military_expenditure_formated_year_data_set'
+# data_set_name = "MILITARY EXPENDITURE SET"
+# x_column_names = ['Country Code', 'Year']
+# prediction_alg_name = "elastic"
+# nan_filling_method = "mean"
+#
+# make_filled_table_multi_columns(destination_from, doc_type, destination_to, data_set_name,
+#                                     x_column_names,
+#                                     prediction_alg_name, nan_filling_method, year_from, year_to)
 
 
 
@@ -655,3 +656,33 @@ Global_State_of_Democracy_Dataset
 # make_filled_table_multi_columns(destination_from, doc_type, destination_to, data_set_name,
 #                                     x_column_names,
 #                                     prediction_alg_name, nan_filling_method, year_from, year_to)
+
+'''
+Freedom of press data filled year data set
+'''
+# destination_from = documents_destination + "freedom_of_press_data_filled_year_data_set.xlsx"
+# doc_type = "exel"
+# destination_to = 'freedom_of_press_data_filled_year_data_set_2'
+# data_set_name = "FREEDOM OF PRESS DATA"
+# x_column_names = ['Country Code', 'Year']
+# prediction_alg_name = "elastic"
+# nan_filling_method = "mean"
+#
+# make_filled_table_multi_columns(destination_from, doc_type, destination_to, data_set_name,
+#                                     x_column_names,
+#                                     prediction_alg_name, nan_filling_method, year_from, year_to)
+
+'''
+Human rights scores
+'''
+destination_from = documents_destination + "human-rights-scores.xlsx"
+doc_type = "exel"
+destination_to = 'human-rights-scores_filled_year_data_set'
+data_set_name = "HUMAN RIGHTS DATA SET"
+x_column_names = ['Country Code', 'Year']
+y_column_name = ['Human Rights Protection Scores']
+prediction_alg_name = "elastic"
+nan_filling_method = "mean"
+
+make_filled_table(destination_from, doc_type, destination_to, data_set_name, x_column_names, y_column_name,
+                  prediction_alg_name, nan_filling_method, year_from, year_to)
