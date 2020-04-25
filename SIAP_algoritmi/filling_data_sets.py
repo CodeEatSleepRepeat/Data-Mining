@@ -287,26 +287,45 @@ def make_filled_table(destination_from, doc_type, destination_to, data_set_name,
 def make_filled_table_multi_columns(destination_from, doc_type, destination_to, data_set_name,
                                     x_column_names,
                                     prediction_alg_name, nan_filling_method, year_from, year_to):
-    document = utils.read_exel(destination_from)
-    column_names = document.columns
+    if doc_type == "exel":
+        document = utils.read_exel(destination_from)
+    else:
+        document = utils.read_csv(destination_from)
+
+    column_names_all = document.columns
     final_data_set = []
     iterator = 0
 
+    column_names = []
+
+    # vadimo nazive kolona koje trebamo da predvidimo
+    for column_name in column_names_all:
+        if column_name in x_column_names:
+            continue
+        else:
+            column_names.append(column_name)
+
+    # pravimo niz brojeva kolona koje se koriste za X vrednost i broj koji se koristi za y vrednost
+    column_number = 1
+    x_column_number_identificator = []
+    for column_x in x_column_names:
+        x_column_number_identificator.append(str(column_number))
+        column_number = column_number + 1
+    x_column_number_identificator.append(str(column_number))
+
     for column_name in column_names:
         y_column_name = [column_name]
-        if iterator > 1:
-            filled_column_data_set = make_filled_table(destination_from, doc_type, destination_to, data_set_name,
-                                                       x_column_names, y_column_name,
-                                                       prediction_alg_name, nan_filling_method, year_from, year_to)
-            if iterator == 2:
-                final_data_set = filled_column_data_set
-            else:
-                filled_column_data_set = pd.DataFrame(filled_column_data_set, columns=["1", "2", "3"])
-                final_data_set = np.concatenate((final_data_set, filled_column_data_set[['3']].values), axis=1)
 
-            iterator = iterator + 1
+        filled_column_data_set = make_filled_table(destination_from, doc_type, destination_to, data_set_name,
+                                                   x_column_names, y_column_name,
+                                                   prediction_alg_name, nan_filling_method, year_from, year_to)
+        if iterator == 0:
+            final_data_set = filled_column_data_set
         else:
-            iterator = iterator + 1
+            filled_column_data_set = pd.DataFrame(filled_column_data_set, columns=x_column_number_identificator)
+            final_data_set = np.concatenate((final_data_set, filled_column_data_set[[str(column_number)]].values), axis=1)
+
+        iterator = iterator + 1
 
     save_data_as_csv(final_data_set, destination_to_save_new_documents + destination_to)
 
@@ -547,54 +566,6 @@ FREEDOM OF PRESS DATA, LEGAL ENVIRONMENT AS PREDICTING VALUE
 
 
 '''
-    SCHOOLING 1ST COLUMN DATA SET
-'''
-# destination_from = documents_destination + "schooling.xlsx"
-# doc_type = "exel"
-# destination_to = 'schooling_1_filled_year_data_set'
-# data_set_name = "SCHOOLING DATA SET"
-# x_column_names = ['Country Code', 'Year']
-# y_column_name = ['School enrollment, tertiary (% gross)']
-# prediction_alg_name = "elastic"
-# nan_filling_method = "mean"
-#
-# make_filled_table(destination_from, doc_type, destination_to, data_set_name, x_column_names, y_column_name,
-#                   prediction_alg_name, nan_filling_method, year_from, year_to)
-
-
-'''
-    SCHOOLING 2ND COLUMN  DATA SET
-'''
-
-# destination_from = documents_destination + "schooling.xlsx"
-# doc_type = "exel"
-# destination_to = 'schooling_2_filled_year_data_set'
-# data_set_name = "SCHOOLING DATA SET"
-# x_column_names = ['Country Code', 'Year']
-# y_column_name = ['School enrollment, secondary (% gross)']
-# prediction_alg_name = "elastic"
-# nan_filling_method = "mean"
-#
-# make_filled_table(destination_from, doc_type, destination_to, data_set_name, x_column_names, y_column_name,
-#                   prediction_alg_name, nan_filling_method, year_from, year_to)
-
-'''
-    SCHOOLING 3td COLUMN  DATA SET
-'''
-
-# destination_from = documents_destination + "schooling.xlsx"
-# doc_type = "exel"
-# destination_to = 'schooling_3_filled_year_data_set'
-# data_set_name = "SCHOOLING DATA SET"
-# x_column_names = ['Country Code', 'Year']
-# y_column_name = ['School enrollment, primary (% gross)']
-# prediction_alg_name = "elastic"
-# nan_filling_method = "mean"
-#
-# make_filled_table(destination_from, doc_type, destination_to, data_set_name, x_column_names, y_column_name,
-#                   prediction_alg_name, nan_filling_method, year_from, year_to)
-
-'''
 internet_users_filtered
 '''
 # destination_from = documents_destination + "internet_users_filtered.xlsx"
@@ -624,7 +595,6 @@ military_expenditure_formated
 # make_filled_table_multi_columns(destination_from, doc_type, destination_to, data_set_name,
 #                                     x_column_names,
 #                                     prediction_alg_name, nan_filling_method, year_from, year_to)
-
 
 
 '''
@@ -675,14 +645,77 @@ Freedom of press data filled year data set
 '''
 Human rights scores
 '''
-destination_from = documents_destination + "human-rights-scores.xlsx"
-doc_type = "exel"
-destination_to = 'human-rights-scores_filled_year_data_set'
-data_set_name = "HUMAN RIGHTS DATA SET"
-x_column_names = ['Country Code', 'Year']
-y_column_name = ['Human Rights Protection Scores']
+# destination_from = documents_destination + "human-rights-scores.xlsx"
+# doc_type = "exel"
+# destination_to = 'human-rights-scores_filled_year_data_set'
+# data_set_name = "HUMAN RIGHTS DATA SET"
+# x_column_names = ['Country Code', 'Year']
+# y_column_name = ['Human Rights Protection Scores']
+# prediction_alg_name = "elastic"
+# nan_filling_method = "mean"
+#
+# make_filled_table(destination_from, doc_type, destination_to, data_set_name, x_column_names, y_column_name,
+#                   prediction_alg_name, nan_filling_method, year_from, year_to)
+
+'''
+Schooling DATASET
+'''
+
+# destination_from = documents_destination + "schooling_1_filled_year_data_set.xlsx"
+# doc_type = "exel"
+# destination_to = 'schooling_1_filled_year_data_set_formated_year_data_set'
+# data_set_name = "SCHOOLING DATASET"
+# x_column_names = ['Country Code', 'Year']
+# prediction_alg_name = "elastic"
+# nan_filling_method = "mean"
+#
+# make_filled_table_multi_columns(destination_from, doc_type, destination_to, data_set_name,
+#                                     x_column_names,
+#                                     prediction_alg_name, nan_filling_method, year_from, year_to)
+
+'''
+ELECTICITY 
+'''
+# destination_from = documents_destination + "electricity.xlsx"
+# doc_type = "exel"
+# destination_to = 'electricity_filled_year_data_set'
+# data_set_name = "ELECTRICITY DATA SET"
+# x_column_names = ['Country Code', 'Year']
+# y_column_name = ['Access to electricity (% of population)']
+# prediction_alg_name = "elastic"
+# nan_filling_method = "mean"
+#
+# make_filled_table(destination_from, doc_type, destination_to, data_set_name, x_column_names, y_column_name,
+#                   prediction_alg_name, nan_filling_method, year_from, year_to)
+
+'''
+GLOBAL MEDIA FREEDOM DATASET
+'''
+# destination_from = documents_destination + "Global_Media_Freedom_Dataset.xlsx"
+# doc_type = "exel"
+# destination_to = 'Global_Media_Freedom_Dataset_filled_year_data_set'
+# data_set_name = "GLOBAL MEDIA FREEDOM DATA SET"
+# x_column_names = ['Country Code', 'Year']
+# y_column_name = ['Mediascore']
+# prediction_alg_name = "elastic"
+# nan_filling_method = "mean"
+#
+# make_filled_table(destination_from, doc_type, destination_to, data_set_name, x_column_names, y_column_name,
+#                   prediction_alg_name, nan_filling_method, year_from, year_to)
+
+
+'''
+FINAL DATASET
+'''
+destination_from = documents_destination + "elasticNetTabela.csv"
+doc_type = "csv"
+destination_to = 'final_dataset_filled_year_data_set_formated_year_data_set'
+data_set_name = "FINAL DATASET"
+x_column_names = ['Country Code', 'Year', 'Country Name', 'Region', 'IncomeGroup', 'Dominant religion',
+                  'Deaths - Self-harm - Sex: Both - Age: All Ages (Percent) (%)']
 prediction_alg_name = "elastic"
 nan_filling_method = "mean"
 
-make_filled_table(destination_from, doc_type, destination_to, data_set_name, x_column_names, y_column_name,
-                  prediction_alg_name, nan_filling_method, year_from, year_to)
+make_filled_table_multi_columns(destination_from, doc_type, destination_to, data_set_name,
+                                x_column_names,
+                                prediction_alg_name, nan_filling_method, year_from, year_to)
