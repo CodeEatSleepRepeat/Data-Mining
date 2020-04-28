@@ -43,6 +43,7 @@ def random_forest(data_set, y_values, want_graph, random_state, max_depth):
     data_set = pd.get_dummies(data_set)
     model.fit(data_set, y_values)
 
+    indices = []
     if want_graph:
         features = data_set.columns
         importances = model.feature_importances_
@@ -74,9 +75,10 @@ def factor_analysis(data_set, number_of_components, want_graph):
         plt.title('Factor Analysis Components')
         for i in range(0, number_of_components):
             if i == (number_of_components - 1):
-                plt.scatter(FA[:, i], FA[:.0])
+                plt.scatter(FA[:, i], FA[:, 0])
             else:
                 plt.scatter(FA[:, i], FA[:, i + 1])
+        plt.show()
 
     return FA
 

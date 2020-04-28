@@ -1,6 +1,4 @@
 import dimension_reduction_algorithms
-import prediction_algorithms
-import validation_methods
 import utils
 import pandas as pd
 
@@ -142,4 +140,4 @@ ima neku gresku
 '''
 SEQUENTIAL FEATURE SELECTION
 '''
-sequential_feat_selection_data_set = dimension_reduction_algorithms.sequential_feature_selection(pd.get_dummies(x_train_without_nan), y_train_without_nan, False)
+# sequential_feat_selection_data_set = dimension_reduction_algorithms.sequential_feature_selection(pd.get_dummies(x_train_without_nan), y_train_without_nan, False)

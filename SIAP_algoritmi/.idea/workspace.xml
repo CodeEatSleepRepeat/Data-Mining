@@ -2,9 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4d6a4f2a-1c7b-4612-84d3-d67d2fbce692" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/testing_final_data_sets.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Algoritmi za SIAP.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Algoritmi za SIAP.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/filling_data_sets.py" beforeDir="false" afterPath="$PROJECT_DIR$/filling_data_sets.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../josTrebaRegresija/novo/novo2/daily_per_capita_supply_of_calories_filled_years_data_set.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/../josTrebaRegresija/novo/novo2/daily_per_capita_supply_of_calories_filled_years_data_set.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dimension_reduction_algorithms.py" beforeDir="false" afterPath="$PROJECT_DIR$/dimension_reduction_algorithms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prediction_algorithms.py" beforeDir="false" afterPath="$PROJECT_DIR$/prediction_algorithms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testing_dimension_reduction_algorithms.py" beforeDir="false" afterPath="$PROJECT_DIR$/testing_dimension_reduction_algorithms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testing_prediction_algorithms.py" beforeDir="false" afterPath="$PROJECT_DIR$/testing_prediction_algorithms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../elasticNetTabela.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/../elasticNetTabela.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../neuralNetworkTabela.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/../neuralNetworkTabela.xlsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +41,7 @@
     <property name="last_opened_file_path" value="$USER_HOME$/PycharmProjects/filterTable/filtering_table.py" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
-  <component name="RunManager" selected="Python.filling_data_sets">
+  <component name="RunManager" selected="Python.testing_final_data_sets">
     <configuration name="filling_data_sets" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SIAP_algoritmi" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -70,6 +76,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testing_dimension_reduction_algorithms.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="testing_final_data_sets" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="SIAP_algoritmi" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testing_final_data_sets.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -122,6 +149,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.testing_final_data_sets" />
         <item itemvalue="Python.filling_data_sets" />
         <item itemvalue="Python.testing_dimension_reduction_algorithms" />
         <item itemvalue="Python.testing_prediction_algorithms" />
@@ -143,57 +171,57 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1918" height="480" key="DebuggerActiveHint" timestamp="1585575316261">
+    <state width="1918" height="480" key="DebuggerActiveHint" timestamp="1588003247026">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1918" height="480" key="DebuggerActiveHint/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1585575316261" />
+    <state width="1918" height="480" key="DebuggerActiveHint/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1588003247026" />
     <state x="2663" y="297" width="424" height="484" key="FileChooserDialogImpl" timestamp="1585572630735">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2663" y="297" width="424" height="484" key="FileChooserDialogImpl/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1585572630735" />
-    <state width="1897" height="332" key="GridCell.Tab.0.bottom" timestamp="1587745117034">
+    <state width="1897" height="332" key="GridCell.Tab.0.bottom" timestamp="1588100282437">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state width="1897" height="226" key="GridCell.Tab.0.bottom/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1586445188680" />
-    <state width="1897" height="332" key="GridCell.Tab.0.bottom/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587745117034" />
+    <state width="1897" height="332" key="GridCell.Tab.0.bottom/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1588100282437" />
     <state width="1897" height="278" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1582800140961" />
-    <state width="1897" height="332" key="GridCell.Tab.0.center" timestamp="1587745117034">
+    <state width="1897" height="332" key="GridCell.Tab.0.center" timestamp="1588100282437">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state width="1897" height="226" key="GridCell.Tab.0.center/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1586445188680" />
-    <state width="1897" height="332" key="GridCell.Tab.0.center/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587745117034" />
+    <state width="1897" height="332" key="GridCell.Tab.0.center/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1588100282437" />
     <state width="1897" height="278" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1582800140961" />
-    <state width="1897" height="332" key="GridCell.Tab.0.left" timestamp="1587745117033">
+    <state width="1897" height="332" key="GridCell.Tab.0.left" timestamp="1588100282437">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state width="1897" height="226" key="GridCell.Tab.0.left/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1586445188680" />
-    <state width="1897" height="332" key="GridCell.Tab.0.left/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587745117033" />
+    <state width="1897" height="332" key="GridCell.Tab.0.left/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1588100282437" />
     <state width="1897" height="278" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1582800140960" />
-    <state width="1897" height="332" key="GridCell.Tab.0.right" timestamp="1587745117034">
+    <state width="1897" height="332" key="GridCell.Tab.0.right" timestamp="1588100282437">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state width="1897" height="226" key="GridCell.Tab.0.right/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1586445188680" />
-    <state width="1897" height="332" key="GridCell.Tab.0.right/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587745117034" />
+    <state width="1897" height="332" key="GridCell.Tab.0.right/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1588100282437" />
     <state width="1897" height="278" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1582800140961" />
-    <state width="1897" height="332" key="GridCell.Tab.1.bottom" timestamp="1587745117035">
+    <state width="1897" height="332" key="GridCell.Tab.1.bottom" timestamp="1588100282437">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1897" height="332" key="GridCell.Tab.1.bottom/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587745117035" />
+    <state width="1897" height="332" key="GridCell.Tab.1.bottom/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1588100282437" />
     <state width="1897" height="222" key="GridCell.Tab.1.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1582387822253" />
-    <state width="1897" height="332" key="GridCell.Tab.1.center" timestamp="1587745117035">
+    <state width="1897" height="332" key="GridCell.Tab.1.center" timestamp="1588100282437">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1897" height="332" key="GridCell.Tab.1.center/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587745117035" />
+    <state width="1897" height="332" key="GridCell.Tab.1.center/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1588100282437" />
     <state width="1897" height="222" key="GridCell.Tab.1.center/0.27.1920.1053@0.27.1920.1053" timestamp="1582387822252" />
-    <state width="1897" height="332" key="GridCell.Tab.1.left" timestamp="1587745117035">
+    <state width="1897" height="332" key="GridCell.Tab.1.left" timestamp="1588100282437">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1897" height="332" key="GridCell.Tab.1.left/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587745117035" />
+    <state width="1897" height="332" key="GridCell.Tab.1.left/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1588100282437" />
     <state width="1897" height="222" key="GridCell.Tab.1.left/0.27.1920.1053@0.27.1920.1053" timestamp="1582387822251" />
-    <state width="1897" height="332" key="GridCell.Tab.1.right" timestamp="1587745117035">
+    <state width="1897" height="332" key="GridCell.Tab.1.right" timestamp="1588100282437">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1897" height="332" key="GridCell.Tab.1.right/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587745117035" />
+    <state width="1897" height="332" key="GridCell.Tab.1.right/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1588100282437" />
     <state width="1897" height="222" key="GridCell.Tab.1.right/0.27.1920.1053@0.27.1920.1053" timestamp="1582387822253" />
     <state x="449" y="187" key="SettingsEditor" timestamp="1582626331426">
       <screen x="0" y="27" width="1920" height="1053" />
@@ -209,17 +237,16 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="613" y="149" width="683" height="806" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.27.1920.1053@0.27.1920.1053" timestamp="1582108310404" />
+    <state x="2571" y="111" width="1070" height="855" key="find.popup" timestamp="1588098267528">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2571" y="111" width="1070" height="855" key="find.popup/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1588098267528" />
+    <state x="2543" y="237" width="672" height="678" key="search.everywhere.popup" timestamp="1588097811395">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2543" y="237" width="672" height="678" key="search.everywhere.popup/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1588097811395" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/dimension_reduction_algorithms.py</url>
-          <line>20</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
         <watch expression="__py_debug_temp_var_1601108079" />

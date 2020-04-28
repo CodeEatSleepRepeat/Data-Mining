@@ -1,15 +1,12 @@
 from sys import stdout
 import numpy as np
-import pandas as pd
 import matplotlib.pyplot as plt
-from scipy.signal import savgol_filter
 from sklearn.cross_decomposition import PLSRegression
 from sklearn.model_selection import cross_val_predict
 from sklearn.metrics import mean_squared_error, r2_score
 import xgboost as xgb
 from lifelines import CoxPHFitter
-from sklearn.linear_model import ElasticNet, ElasticNetCV
-import sklearn.metrics
+from sklearn.linear_model import ElasticNet
 
 
 # import autosklearn.regression
@@ -26,9 +23,9 @@ def partial_least_squares(X, y, n_comp, plot_components=True):
         # Cross-validation
         y_cv = cross_val_predict(pls, X, y, cv=10)
         mse.append(mean_squared_error(y, y_cv))
-        comp = 100 * (i + 1) / 40
         # Trick to update status on the same line
-        stdout.write("\r%d%% completed" % comp)
+        stdout.write(str(i)+" of " + str(len(component)) + " completed")
+        stdout.write("\n")
         stdout.flush()
     stdout.write("\n")
     # Calculate and print the position of minimum in MSE
@@ -62,21 +59,21 @@ def partial_least_squares(X, y, n_comp, plot_components=True):
     print('MSE calib: %5.3f' % mse_c)
     print('MSE CV: %5.3f' % mse_cv)
     # Plot regression and figures of merit
-    rangey = max(y) - min(y)
-    rangex = max(y_c) - min(y_c)
-    # Fit a line to the CV vs response
-    z = np.polyfit(y, y_c, 1)
-    with plt.style.context(('ggplot')):
-        fig, ax = plt.subplots(figsize=(9, 5))
-        ax.scatter(y_c, y, c='red', edgecolors='k')
-        # Plot the best fit line
-        ax.plot(np.polyval(z, y), y, c='blue', linewidth=1)
-        # Plot the ideal 1:1 line
-        ax.plot(y, y, color='green', linewidth=1)
-        plt.title('$R^{2}$ (CV): ' + str(score_cv))
-        plt.xlabel('Predicted $^{\circ}$Brix')
-        plt.ylabel('Measured $^{\circ}$Brix')
-        plt.show()
+    # rangey = max(y) - min(y)
+    # rangex = max(y_c) - min(y_c)
+    # # Fit a line to the CV vs response
+    # z = np.polyfit(y, y_c, 1)
+    # with plt.style.context(('ggplot')):
+    #     fig, ax = plt.subplots(figsize=(9, 5))
+    #     ax.scatter(y_c, y, c='red', edgecolors='k')
+    #     # Plot the best fit line
+    #     ax.plot(np.polyval(z, y), y, c='blue', linewidth=1)
+    #     # Plot the ideal 1:1 line
+    #     ax.plot(y, y, color='green', linewidth=1)
+    #     plt.title('$R^{2}$ (CV): ' + str(score_cv))
+    #     plt.xlabel('Predicted $^{\circ}$Brix')
+    #     plt.ylabel('Measured $^{\circ}$Brix')
+    #     plt.show()
     return
 
 
